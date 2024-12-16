@@ -8,7 +8,7 @@
 
 <TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
    minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Ainhize Arrese"
-   xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.PrimaryController">
+   xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <content>
       <AnchorPane id="emaitzaButton" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
          prefWidth="200.0">
