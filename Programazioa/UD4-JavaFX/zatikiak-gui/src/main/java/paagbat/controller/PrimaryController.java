@@ -24,6 +24,8 @@ public class PrimaryController {
     private Label zat3Zenba;
     @FXML
     private Label zat3Izenda;
+    @FXML
+    private Label errorMSG;
 
     private String currentOperation = "+"; // Operación actual (suma por defecto)
 
@@ -77,7 +79,7 @@ public class PrimaryController {
                     break;
             }
         } catch (NumberFormatException e) {
-            System.out.println("Zenbaki bat sartu behar da.");
+            errorMSG.setText("Karratuetan zenbakiak sartu behar dira.");
         }
     }
-}
+}   
