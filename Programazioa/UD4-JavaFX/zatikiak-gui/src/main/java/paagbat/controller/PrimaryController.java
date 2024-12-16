@@ -1,8 +1,5 @@
 package paagbat.controller;
 
-import java.io.IOException;
-import java.text.DecimalFormat;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
