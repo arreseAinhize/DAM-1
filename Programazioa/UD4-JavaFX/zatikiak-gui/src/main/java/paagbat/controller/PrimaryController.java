@@ -59,27 +59,47 @@ public class PrimaryController {
             switch (currentOperation) {
                 case "-":
                     Zatikia zatKendu = Zatikia.kendu(zat1, zat2);
-                    zat3Zenba.setText(String.valueOf(zatKendu.getZenbakitzailea()));
-                    zat3Izenda.setText(String.valueOf(zatKendu.getIzendatzailea()));
+                    if (zatKendu.getZenbakitzailea() < 0 && zatKendu.getIzendatzailea() < 0) {
+                        zat3Zenba.setText(String.valueOf((-1) * zatKendu.getZenbakitzailea()));
+                        zat3Izenda.setText(String.valueOf((-1) * zatKendu.getIzendatzailea()));
+                    } else {
+                        zat3Zenba.setText(String.valueOf(zatKendu.getZenbakitzailea()));
+                        zat3Izenda.setText(String.valueOf(zatKendu.getIzendatzailea()));
+                    }
                     break;
                 case "*":
                     Zatikia zatBiderkatu = Zatikia.biderkatu(zat1, zat2);
-                    zat3Zenba.setText(String.valueOf(zatBiderkatu.getZenbakitzailea()));
-                    zat3Izenda.setText(String.valueOf(zatBiderkatu.getIzendatzailea()));
+                    if (zatBiderkatu.getZenbakitzailea() < 0 && zatBiderkatu.getIzendatzailea() < 0) {
+                        zat3Zenba.setText(String.valueOf((-1) * zatBiderkatu.getZenbakitzailea()));
+                        zat3Izenda.setText(String.valueOf((-1) * zatBiderkatu.getIzendatzailea()));
+                    } else {
+                        zat3Zenba.setText(String.valueOf(zatBiderkatu.getZenbakitzailea()));
+                        zat3Izenda.setText(String.valueOf(zatBiderkatu.getIzendatzailea()));
+                    }
                     break;
                 case "/":
                     Zatikia zatZatitu = Zatikia.zatiketa(zat1, zat2);
-                    zat3Zenba.setText(String.valueOf(zatZatitu.getZenbakitzailea()));
-                    zat3Izenda.setText(String.valueOf(zatZatitu.getIzendatzailea()));
+                    if (zatZatitu.getZenbakitzailea() < 0 && zatZatitu.getIzendatzailea() < 0) {
+                        zat3Zenba.setText(String.valueOf((-1) * zatZatitu.getZenbakitzailea()));
+                        zat3Izenda.setText(String.valueOf((-1) * zatZatitu.getIzendatzailea()));
+                    } else {
+                        zat3Zenba.setText(String.valueOf(zatZatitu.getZenbakitzailea()));
+                        zat3Izenda.setText(String.valueOf(zatZatitu.getIzendatzailea()));
+                    }
                     break;
                 default:
                     Zatikia zatBatu = Zatikia.batu(zat1, zat2);
-                    zat3Zenba.setText(String.valueOf(zatBatu.getZenbakitzailea()));
-                    zat3Izenda.setText(String.valueOf(zatBatu.getIzendatzailea()));
+                    if (zatBatu.getZenbakitzailea() < 0 && zatBatu.getIzendatzailea() < 0) {
+                        zat3Zenba.setText(String.valueOf((-1) * zatBatu.getZenbakitzailea()));
+                        zat3Izenda.setText(String.valueOf((-1) * zatBatu.getIzendatzailea()));
+                    } else {
+                        zat3Zenba.setText(String.valueOf(zatBatu.getZenbakitzailea()));
+                        zat3Izenda.setText(String.valueOf(zatBatu.getIzendatzailea()));
+                    }
                     break;
             }
         } catch (NumberFormatException e) {
             errorMSG.setText("Karratuetan zenbakiak sartu behar dira.");
         }
     }
-}   
+}
