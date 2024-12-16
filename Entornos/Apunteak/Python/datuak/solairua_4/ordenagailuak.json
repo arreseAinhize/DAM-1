@@ -1,0 +1,92 @@
+[
+    {
+        "id": 401,
+        "room": 1,
+        "ip": "192.168.4.1",
+        "os": "Ubuntu",
+        "buydate": "2020-01-01",
+        "revisiondate": "2020-01-01",
+        "notes": null
+    },
+    {
+        "id": 402,
+        "room": 1,
+        "ip": "192.168.4.2",
+        "os": "Ubuntu",
+        "buydate": "2020-01-01",
+        "revisiondate": "2020-01-01",
+        "notes": "Works as expected"
+    },
+    {
+        "id": 403,
+        "room": 1,
+        "ip": "192.168.4.3",
+        "os": "Ubuntu",
+        "buydate": "2020-01-01",
+        "revisiondate": "2020-01-01",
+        "notes": "SSD disk"
+    },
+    {
+        "id": 404,
+        "room": 1,
+        "ip": "192.168.4.4",
+        "os": "Ubuntu",
+        "buydate": "2020-01-01",
+        "revisiondate": "2020-01-01",
+        "notes": "Used for backups"
+    },
+    {
+        "id": 405,
+        "room": 2,
+        "ip": "192.168.4.5",
+        "os": "Windows 10",
+        "buydate": "unkown",
+        "revisiondate": "2020-01-01",
+        "notes": "Sinadura digitala egiteko"
+    },
+    {
+        "id": 406,
+        "room": 2,
+        "ip": "192.168.4.6",
+        "os": "Windows 10",
+        "buydate": "unkown",
+        "revisiondate": "2020-01-01",
+        "notes": "Autocad irakasteko erabiltzen da"
+    },
+    {
+        "id": 407,
+        "room": 2,
+        "ip": "192.168.4.7",
+        "os": "Windows 10",
+        "buydate": "unkown",
+        "revisiondate": "2020-01-01",
+        "notes": "Webexak egiteko"
+    },
+    {
+        "id": 408,
+        "room": 3,
+        "ip": "192.168.4.8",
+        "os": "Ubuntu 20.10",
+        "buydate": "2021-01-01",
+        "revisiondate": "2021-01-01",
+        "notes": ""
+    },
+    {
+        "id": 409,
+        "room": 3,
+        "ip": "192.168.4.9",
+        "os": "Ubuntu 20.10",
+        "buydate": "2021-01-01",
+        "revisiondate": "2021-01-01",
+        "notes": ""
+    },
+    {
+        "id": 410,
+        "room": 3,
+        "ip": "192.168.4.10",
+        "os": "Ubuntu 20.10",
+        "buydate": "2021-01-01",
+        "revisiondate": "2021-01-01",
+        "notes": ""
+    }
+]

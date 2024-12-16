@@ -1,0 +1,149 @@
+
+El paquete o biblioteca estándar en C, **`stdio.h`** (Standard Input Output Header), contiene funciones que permiten realizar operaciones básicas de entrada y salida (E/S) en C. Estas funciones son fundamentales para leer datos del teclado, escribir datos en la pantalla o manipular archivos.
+
+Aquí tienes algunas de las funciones más importantes y comunes que puedes encontrar en **`stdio.h`**:
+
+### 1. **Funciones de entrada y salida estándar**:
+   - **`printf()`**: Se utiliza para imprimir texto en la consola. Admite especificadores de formato como `%d`, `%f`, `%c`, `%s` para imprimir diferentes tipos de datos.
+     - Ejemplo: 
+       ```c
+       printf("Hola, Mundo\n");
+       ```
+
+   - **`scanf()`**: Permite leer datos desde la entrada estándar (teclado) y almacenarlos en variables.
+     - Ejemplo:
+       ```c
+       int numero;
+       scanf("%d", &numero);
+       ```
+
+   - **`getchar()`**: Lee un solo carácter desde la entrada estándar.
+     - Ejemplo:
+       ```c
+       char c = getchar();
+       ```
+
+   - **`putchar()`**: Imprime un solo carácter en la salida estándar.
+     - Ejemplo:
+       ```c
+       putchar('A');
+       ```
+
+   - **`gets()`** (obsoleto en las versiones modernas de C): Lee una línea de texto hasta que encuentra un salto de línea (pero **no es seguro** por problemas de desbordamiento de buffer, se recomienda `fgets()`).
+   
+   - **`fgets()`**: Lee una línea de texto de forma más segura desde la entrada estándar o un archivo.
+     - Ejemplo:
+       ```c
+       char str[50];
+       fgets(str, 50, stdin); // Lee hasta 50 caracteres o hasta el salto de línea
+       ```
+
+### 2. **Funciones de manejo de archivos**:
+Estas funciones permiten abrir, leer, escribir y cerrar archivos.
+
+   - **`fopen()`**: Abre un archivo para leer, escribir o agregar (append). Retorna un puntero de tipo `FILE`.
+     - Ejemplo:
+       ```c
+       FILE *archivo = fopen("datos.txt", "r"); // Abre archivo en modo lectura
+       ```
+
+   - **`fclose()`**: Cierra un archivo que fue abierto con `fopen()`.
+     - Ejemplo:
+       ```c
+       fclose(archivo);
+       ```
+
+   - **`fprintf()`**: Es similar a `printf()`, pero permite escribir en un archivo en lugar de la consola.
+     - Ejemplo:
+       ```c
+       FILE *archivo = fopen("datos.txt", "w");
+       fprintf(archivo, "Escribiendo en archivo\n");
+       fclose(archivo);
+       ```
+
+   - **`fscanf()`**: Similar a `scanf()`, pero se utiliza para leer datos desde un archivo.
+     - Ejemplo:
+       ```c
+       int numero;
+       FILE *archivo = fopen("datos.txt", "r");
+       fscanf(archivo, "%d", &numero);
+       fclose(archivo);
+       ```
+
+   - **`fgetc()`**: Lee un solo carácter desde un archivo.
+     - Ejemplo:
+       ```c
+       char c;
+       FILE *archivo = fopen("datos.txt", "r");
+       c = fgetc(archivo);
+       fclose(archivo);
+       ```
+
+   - **`fputc()`**: Escribe un solo carácter en un archivo.
+     - Ejemplo:
+       ```c
+       FILE *archivo = fopen("datos.txt", "w");
+       fputc('A', archivo);
+       fclose(archivo);
+       ```
+
+   - **`fgets()`**: Lee una línea desde un archivo.
+     - Ejemplo:
+       ```c
+       char buffer[100];
+       FILE *archivo = fopen("datos.txt", "r");
+       fgets(buffer, 100, archivo);
+       fclose(archivo);
+       ```
+
+   - **`fputs()`**: Escribe una cadena de texto en un archivo.
+     - Ejemplo:
+       ```c
+       FILE *archivo = fopen("datos.txt", "w");
+       fputs("Escribiendo en el archivo", archivo);
+       fclose(archivo);
+       ```
+
+   - **`fseek()`**: Permite mover el puntero de lectura/escritura a una posición específica en un archivo.
+     - Ejemplo:
+       ```c
+       fseek(archivo, 0, SEEK_END); // Mueve el puntero al final del archivo
+       ```
+
+   - **`ftell()`**: Devuelve la posición actual del puntero de archivo.
+     - Ejemplo:
+       ```c
+       long posicion = ftell(archivo);
+       ```
+
+   - **`rewind()`**: Coloca el puntero de lectura/escritura al inicio del archivo.
+     - Ejemplo:
+       ```c
+       rewind(archivo); // Vuelve al inicio del archivo
+       ```
+
+### 3. **Funciones de manejo de buffers**:
+   - **`setbuf()`**: Asigna un buffer a un archivo.
+   - **`setvbuf()`**: Controla el modo de buffering de un archivo (sin buffer, buffer de línea, o buffer completo).
+
+### 4. **Otras funciones útiles**:
+   - **`perror()`**: Muestra un mensaje de error en función del valor actual de `errno`.
+     - Ejemplo:
+       ```c
+       perror("Error al abrir el archivo");
+       ```
+
+   - **`remove()`**: Elimina un archivo.
+     - Ejemplo:
+       ```c
+       remove("datos.txt");
+       ```
+
+   - **`rename()`**: Cambia el nombre de un archivo.
+     - Ejemplo:
+       ```c
+       rename("viejo.txt", "nuevo.txt");
+       ```
+
+### Resumen:
+El paquete `stdio.h` te proporciona las herramientas fundamentales para la entrada/salida tanto en consola como en archivos. Puedes usarlo para interactuar con el usuario (consola) o leer/escribir archivos de texto, y manejar errores relacionados con estas operaciones.

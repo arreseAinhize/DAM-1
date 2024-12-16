@@ -1,0 +1,29 @@
+ARRAY
+    An array is an ordered collection of elements of the same type, identified by a pair of square brackets [ ]. To use an array, you need to:
+        1.- Declare the array with a name and a type. Use a plural name for array, e.g., marks, rows, numbers. All elements of the array belong to the same type.
+        2.- Allocate the array using new operator, or through initialization, e.g.,
+            
+            int[] marks;  // Declare an int array named "marks"
+                        // "marks" is assigned to a special value called "null" before allocation
+            IDOIARI EZ JAKO GUSTETAN --> int marks[];  // Same as above, but the above syntax recommended
+            marks = new int[5];   // Allocate 5 elements via the "new" operator
+            // Declare and allocate a 20-element array in one statement via "new" operator
+            int[] factors = new int[20];
+            // Declare, allocate a 6-element array thru initialization
+            int[] numbers = {11, 22, 33, 44, 55, 66}; // size of array deduced from the number of items
+
+    When an array is constructed via the new operator, all the elements are initialized to their default value, e.g., 0 for int, 0.0 for double, false for boolean, and null for objects. [Unlike C/C++, which does NOT initialize the array contents.]
+    When an array is declared but not allocated, it has a special value called null.
+
+ARRAY INDEX
+    Java's array index begins with zero (0). For example, suppose that marks is an int array of 5 elements, then the 5 elements are: marks[0], marks[1], marks[2], marks[3], and marks[4].
+        int[] marks = new int[5];   // Declare & allocate a 5-element int array
+        // Assign values to the elements
+        marks[0] = 95;
+        marks[1] = 85;
+        marks[2] = 77;
+        marks[3] = 69;
+        marks[4] = 66;
+        // Retrieve elements of the array
+        System.out.println(marks[0]);
+        System.out.println(marks[3] + marks[4]);

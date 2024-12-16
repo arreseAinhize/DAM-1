@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"exekutagarriak","l":"Ariketa"},{"p":"exekutagarriak","l":"Azterketa"},{"p":"exekutagarriak","l":"Kalkulagailua"},{"p":"model","l":"Zatikia"}];updateSearchResults();

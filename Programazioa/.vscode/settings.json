@@ -1,0 +1,7 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "UD2-OOP/03-ZatikienProiektua/src",
+        "UD4-JavaFX/kalkulagailua/src/main/java/paagbat"
+    ]
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+   minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Ainhize Arrese"
+   xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane id="emaitzaButton" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+         prefWidth="200.0">
+         <children>
+            <Button fx:id="eragMota" layoutX="202.0" layoutY="162.0" mnemonicParsing="false" text="+" onAction="#eragAldatu"/>
+            <Button fx:id="eragEgin" layoutX="387.0" layoutY="162.0" mnemonicParsing="false" text="=" onAction="#emaitza"/>
+            <TextField fx:id="zenbBi" layoutX="273.0" layoutY="161.0" prefHeight="26.0"
+               prefWidth="70.0" />
+            <TextField fx:id="zenbBat" layoutX="90.0" layoutY="161.0" prefHeight="26.0"
+               prefWidth="70.0" />
+            <Label layoutX="133.0" layoutY="56.0" prefHeight="28.0" prefWidth="332.0"
+               text="Zenbaki biren arteko eragiketa gauzatzeko sakatu &quot;=&quot; botoia." />
+            <Label layoutX="183.0" layoutY="84.0" prefHeight="26.0" prefWidth="250.0"
+               text="Eragiketaz aldatzeko, sakatu eragiketa botoia." />
+            <Label fx:id="eragEmaitza" layoutX="432.0" layoutY="161.0" prefHeight="28.0"
+               prefWidth="110.0" />
+         </children>
+      </AnchorPane>
+   </content>
+</TitledPane>

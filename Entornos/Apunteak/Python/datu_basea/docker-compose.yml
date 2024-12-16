@@ -1,0 +1,28 @@
+# Use root/example as user/password credentials
+version: "3.1"
+
+services:
+  db:
+    image: mariadb
+    restart: "no"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ordenagailuak
+      MYSQL_USER: unieibar
+      MYSQL_PASSWORD: uniibar
+    ports:
+      - 3306:3306
+    volumes:
+      - db_data:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: "no"
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      ADMINER_DEFAULT_SERVER: db
+
+volumes:
+  db_data:

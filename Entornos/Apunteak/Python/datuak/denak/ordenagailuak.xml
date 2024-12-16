@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<solairua>
+  <gela kodea="501">
+    <ordenagailua id="101">
+      <ip>192.168.5.1</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+    <ordenagailua id="102">
+      <ip>192.168.5.2</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+    <ordenagailua id="103">
+      <ip>192.168.5.3</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+    <ordenagailua id="104">
+      <ip>192.168.5.4</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+  </gela>
+  <gela kodea="502">
+    <ordenagailua id="101">
+      <ip>192.168.5.5</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+    <ordenagailua id="102">
+      <ip>192.168.5.6</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+    <ordenagailua id="103">
+      <ip>192.168.5.7</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+    <ordenagailua id="104">
+      <ip>192.168.5.8</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+  </gela>
+  <gela kodea="503">
+    <ordenagailua id="101">
+      <ip>192.168.5.9</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+    <ordenagailua id="102">
+      <ip>192.168.5.10</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+    <ordenagailua id="103">
+      <ip>192.168.5.11</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+    <ordenagailua id="104">
+      <ip>192.168.5.12</ip>
+      <se>Ubuntu 19.04</se>
+    </ordenagailua>
+  </gela>
+
+</solairua>

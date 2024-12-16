@@ -1,0 +1,123 @@
+
+El paquete **`ctype.h`** en C contiene funciones para la clasificación y transformación de caracteres. Estas funciones son útiles para verificar si un carácter pertenece a una cierta categoría (por ejemplo, si es una letra, un dígito) y para convertir entre mayúsculas y minúsculas.
+
+### 1. **Funciones de clasificación de caracteres**:
+   Estas funciones devuelven un valor distinto de cero (verdadero) si el carácter cumple con la condición que verifica la función; de lo contrario, devuelven cero (falso).
+
+   - **`isalpha()`**: Verifica si un carácter es una letra del alfabeto.
+     - Ejemplo:
+       ```c
+       if (isalpha('a')) { // Verdadero
+           printf("Es una letra.
+");
+       }
+       ```
+
+   - **`isdigit()`**: Verifica si un carácter es un dígito (0-9).
+     - Ejemplo:
+       ```c
+       if (isdigit('5')) { // Verdadero
+           printf("Es un dígito.
+");
+       }
+       ```
+
+   - **`isalnum()`**: Verifica si un carácter es alfanumérico (letra o dígito).
+     - Ejemplo:
+       ```c
+       if (isalnum('A')) { // Verdadero
+           printf("Es alfanumérico.
+");
+       }
+       ```
+
+   - **`islower()`**: Verifica si un carácter está en minúscula.
+     - Ejemplo:
+       ```c
+       if (islower('a')) { // Verdadero
+           printf("Es minúscula.
+");
+       }
+       ```
+
+   - **`isupper()`**: Verifica si un carácter está en mayúscula.
+     - Ejemplo:
+       ```c
+       if (isupper('A')) { // Verdadero
+           printf("Es mayúscula.
+");
+       }
+       ```
+
+   - **`isspace()`**: Verifica si un carácter es un espacio en blanco, como espacios, tabulaciones o saltos de línea.
+     - Ejemplo:
+       ```c
+       if (isspace(' ')) { // Verdadero
+           printf("Es un espacio en blanco.
+");
+       }
+       ```
+
+   - **`ispunct()`**: Verifica si un carácter es un signo de puntuación.
+     - Ejemplo:
+       ```c
+       if (ispunct(',')) { // Verdadero
+           printf("Es un signo de puntuación.
+");
+       }
+       ```
+
+   - **`isxdigit()`**: Verifica si un carácter es un dígito hexadecimal (0-9, A-F, a-f).
+     - Ejemplo:
+       ```c
+       if (isxdigit('A')) { // Verdadero
+           printf("Es un dígito hexadecimal.
+");
+       }
+       ```
+
+### 2. **Funciones de conversión de caracteres**:
+   Estas funciones permiten convertir caracteres entre mayúsculas y minúsculas.
+
+   - **`tolower()`**: Convierte un carácter en minúscula si es mayúscula. Si el carácter no es una letra mayúscula, lo devuelve tal cual.
+     - Ejemplo:
+       ```c
+       char c = tolower('A'); // c será 'a'
+       ```
+
+   - **`toupper()`**: Convierte un carácter en mayúscula si es minúscula. Si el carácter no es una letra minúscula, lo devuelve tal cual.
+     - Ejemplo:
+       ```c
+       char c = toupper('a'); // c será 'A'
+       ```
+
+### 3. **Funciones adicionales**:
+   - **`iscntrl()`**: Verifica si un carácter es un carácter de control (por ejemplo, caracteres no imprimibles como tabuladores o saltos de línea).
+     - Ejemplo:
+       ```c
+       if (iscntrl('\n')) { // Verdadero
+           printf("Es un carácter de control.
+");
+       }
+       ```
+
+   - **`isgraph()`**: Verifica si un carácter es imprimible y no es un espacio.
+     - Ejemplo:
+       ```c
+       if (isgraph('!')) { // Verdadero
+           printf("Es imprimible y no es un espacio.
+");
+       }
+       ```
+
+   - **`isprint()`**: Verifica si un carácter es imprimible, incluidos los espacios.
+     - Ejemplo:
+       ```c
+       if (isprint(' ')) { // Verdadero
+           printf("Es imprimible.
+");
+       }
+       ```
+
+### Resumen:
+El paquete `ctype.h` es ideal para trabajar con caracteres y realizar validaciones o conversiones entre mayúsculas y minúsculas. Es especialmente útil cuando se necesita validar o transformar la entrada del usuario en programas en C.
