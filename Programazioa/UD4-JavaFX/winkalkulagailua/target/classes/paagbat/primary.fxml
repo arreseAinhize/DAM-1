@@ -2,16 +2,21 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.PrimaryController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controller.PrimaryController">
    <children>
-      <Label fx:id="emaitzaAtera" alignment="BOTTOM_RIGHT" prefHeight="92.0" prefWidth="416.0" textAlignment="RIGHT">
+      <Label fx:id="eragiketaAtera" alignment="BOTTOM_RIGHT" layoutX="3.0" layoutY="10.0" prefHeight="46.0" prefWidth="416.0" textAlignment="RIGHT">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="emaitzaAtera" alignment="BOTTOM_RIGHT" layoutX="3.0" layoutY="24.0" prefHeight="46.0" prefWidth="416.0" textAlignment="RIGHT">
          <font>
             <Font size="15.0" />
          </font>
@@ -32,9 +37,9 @@
          </rowConstraints>
          <children>
             <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete" prefHeight="71.0" prefWidth="106.0" text="C" />
-            <Button fx:id="button7" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="7" GridPane.rowIndex="1" />
-            <Button fx:id="button4" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="4" GridPane.rowIndex="2" />
-            <Button fx:id="button1" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="1" GridPane.rowIndex="3" />
+            <Button fx:id="button7" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="7" GridPane.rowIndex="1" />
+            <Button fx:id="button4" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="4" GridPane.rowIndex="2" />
+            <Button fx:id="button1" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="1" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="⇄" GridPane.rowIndex="4">
                <font>
                   <Font size="25.0" />
@@ -45,35 +50,35 @@
                   <Font name="System Bold Italic" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="button8" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="button5" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="button2" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="button0" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button fx:id="porcentajebutton" mnemonicParsing="false" onAction="#porcentajeKalkulua" prefHeight="71.0" prefWidth="106.0" text="\%" GridPane.columnIndex="2" />
-            <Button fx:id="button9" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="button6" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="button3" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="komaButton" mnemonicParsing="false" prefHeight="71.0" prefWidth="106.0" text="," GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Button fx:id="button8" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="button5" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="button2" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="button0" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="porcentajebutton" mnemonicParsing="false" onAction="#operatorAukeratu" prefHeight="71.0" prefWidth="106.0" text="\%" GridPane.columnIndex="2" />
+            <Button fx:id="button9" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="button6" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="button3" mnemonicParsing="false" onAction="#digitoaAukeratu" prefHeight="71.0" prefWidth="106.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="komaButton" mnemonicParsing="false" onAction="#operatorAukeratu" prefHeight="71.0" prefWidth="106.0" text="," GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="zatiketaButton" mnemonicParsing="false" onAction="#zatiketaKalkulua" prefHeight="71.0" prefWidth="106.0" text="/" GridPane.columnIndex="3">
+            <Button fx:id="zatiketaButton" mnemonicParsing="false" onAction="#operatorAukeratu" prefHeight="71.0" prefWidth="106.0" text="/" GridPane.columnIndex="3">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="biderketaButton" mnemonicParsing="false" onAction="#biderketaKalkulua" prefHeight="71.0" prefWidth="106.0" text="X" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button fx:id="biderketaButton" mnemonicParsing="false" onAction="#operatorAukeratu" prefHeight="71.0" prefWidth="106.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="kenketaButton" mnemonicParsing="false" onAction="#kenketaKalkulua" prefHeight="71.0" prefWidth="106.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button fx:id="kenketaButton" mnemonicParsing="false" onAction="#operatorAukeratu" prefHeight="71.0" prefWidth="106.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font size="25.0" />
                </font>
             </Button>
-            <Button fx:id="gehiketaButton" mnemonicParsing="false" onAction="#gehiketaKalkulua" prefHeight="71.0" prefWidth="106.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button fx:id="gehiketaButton" mnemonicParsing="false" onAction="#operatorAukeratu" prefHeight="71.0" prefWidth="106.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font size="25.0" />
                </font>
@@ -85,5 +90,6 @@
             </Button>
          </children>
       </GridPane>
+      <TextField fx:id="textEragiketaEnter" layoutX="3.0" layoutY="70.0" prefHeight="25.0" prefWidth="416.0" />
    </children>
 </Pane>
