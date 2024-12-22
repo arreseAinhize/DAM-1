@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controllers.AzalpenController">
+   <children>
+      <Label layoutX="84.0" layoutY="22.0" prefHeight="71.0" prefWidth="632.0" text="Galdera zailtasun erraza">
+         <font>
+            <Font name="Consolas Bold" size="45.0" />
+         </font>
+      </Label>
+      <Button fx:id="playquizbtn" layoutX="42.0" layoutY="392.0" mnemonicParsing="false" onAction="#switchToEasy" prefHeight="71.0" prefWidth="332.0" style="-fx-border-radius: 32px; -fx-background-color: #3c88dd; -fx-background-radius: 32px;" text="Hasi jokoa" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold" size="38.0" />
+         </font>
+      </Button>
+      <Button fx:id="playquizbtn1" layoutX="437.0" layoutY="392.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="71.0" prefWidth="332.0" style="-fx-background-color: #510707; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Itzuli" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold" size="38.0" />
+         </font>
+      </Button>
+      <Label layoutX="372.0" layoutY="214.0" text="AZALPENA" />
+   </children>
+</AnchorPane>
