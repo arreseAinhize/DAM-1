@@ -4,34 +4,41 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controllers.EasyController">
    <children>
-      <Label alignment="CENTER" layoutX="122.0" layoutY="14.0" prefHeight="71.0" prefWidth="579.0" text="Galderak">
+      <Label fx:id="questionLabel" alignment="CENTER" layoutX="18.0" layoutY="14.0" prefHeight="102.0" prefWidth="768.0" text="GALDERAK" textAlignment="JUSTIFY">
          <font>
-            <Font name="Consolas Bold" size="28.0" />
+            <Font name="Consolas" size="20.0" />
          </font>
       </Label>
-      <ImageView fx:id="easyImg" fitHeight="207.0" fitWidth="370.0" layoutX="227.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="easyImg" fitHeight="207.0" fitWidth="370.0" layoutX="242.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="playquizbtn3" layoutX="55.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: red; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 1" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Consolas Bold" size="25.0" />
+            <Font name="Consolas Bold" size="20.0" />
          </font>
       </Button>
       <Button fx:id="playquizbtn2" layoutX="436.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: #60adff; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 2" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Consolas Bold" size="25.0" />
+            <Font name="Consolas Bold" size="20.0" />
          </font>
       </Button>
       <Button fx:id="playquizbtn1" layoutX="55.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: #d7cc00; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 3" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Consolas Bold" size="25.0" />
+            <Font name="Consolas Bold" size="20.0" />
          </font>
       </Button>
       <Button fx:id="playquizbtn" layoutX="436.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: green; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 4" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Consolas Bold" size="25.0" />
+            <Font name="Consolas Bold" size="20.0" />
+         </font>
+      </Button>
+      <MediaView fx:id="easymedia" fitHeight="200.0" fitWidth="400.0" layoutX="227.0" layoutY="85.0" />
+      <Button fx:id="playquizbtn4" layoutX="719.0" layoutY="10.0" mnemonicParsing="false" onAction="#returHome" prefHeight="32.0" prefWidth="67.0" style="-fx-background-color: #510707; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="itzuli" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
          </font>
       </Button>
    </children>
