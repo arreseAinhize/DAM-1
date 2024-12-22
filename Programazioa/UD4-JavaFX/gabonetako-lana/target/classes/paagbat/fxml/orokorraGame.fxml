@@ -14,22 +14,22 @@
          </font>
       </Label>
       <ImageView fx:id="easyImg" fitHeight="207.0" fitWidth="370.0" layoutX="227.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="playquizbtn3" layoutX="37.0" layoutY="345.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: green; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 1" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="playquizbtn3" layoutX="55.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: red; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 1" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Consolas Bold" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="playquizbtn2" layoutX="418.0" layoutY="345.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: green; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 2" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="playquizbtn2" layoutX="436.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: #60adff; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 2" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Consolas Bold" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="playquizbtn1" layoutX="37.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: green; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 3" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="playquizbtn1" layoutX="55.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: #d7cc00; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 3" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Consolas Bold" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="playquizbtn" layoutX="418.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: green; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 4" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="playquizbtn" layoutX="436.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="55.0" prefWidth="333.0" style="-fx-background-color: green; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Aukera 4" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Consolas Bold" size="25.0" />
          </font>

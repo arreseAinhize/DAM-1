@@ -12,14 +12,14 @@ public class AzalpenController {
     }
     @FXML
     private void switchToEasy() throws IOException {
-        App.setRoot("/paagbat/fxml/easyGame");
+        App.setRoot("/paagbat/fxml/orokorraGame");
     }
     @FXML
     private void switchToMedium() throws IOException {
-        App.setRoot("/paagbat/fxml/mediumGame");
+        App.setRoot("/paagbat/fxml/gipuzkoaGame");
     }
     @FXML
     private void switchToHard() throws IOException {
-        App.setRoot("/paagbat/fxml/hardGame");
+        App.setRoot("/paagbat/fxml/bizkaiaGame");
     }
 }

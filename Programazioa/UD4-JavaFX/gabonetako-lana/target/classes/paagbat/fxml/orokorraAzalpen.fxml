@@ -7,12 +7,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controllers.AzalpenController">
    <children>
-      <Label layoutX="84.0" layoutY="22.0" prefHeight="71.0" prefWidth="632.0" text="Galdera zailtasun ertaina">
+      <Label layoutX="295.0" layoutY="25.0" prefHeight="71.0" prefWidth="210.0" text="OROKORRA">
          <font>
             <Font name="Consolas Bold" size="45.0" />
          </font>
       </Label>
-      <Button fx:id="playquizbtn" layoutX="42.0" layoutY="392.0" mnemonicParsing="false" onAction="#switchToMedium" prefHeight="71.0" prefWidth="332.0" style="-fx-background-color: #3c88dd; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="Hasi Jokoa" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="playquizbtn" layoutX="42.0" layoutY="392.0" mnemonicParsing="false" onAction="#switchToEasy" prefHeight="71.0" prefWidth="332.0" style="-fx-border-radius: 32px; -fx-background-color: #3c88dd; -fx-background-radius: 32px;" text="Hasi jokoa" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Consolas Bold" size="38.0" />
          </font>
@@ -22,6 +22,6 @@
             <Font name="Consolas Bold" size="38.0" />
          </font>
       </Button>
-      <Label layoutX="382.0" layoutY="224.0" text="AZALPENA" />
+      <Label layoutX="372.0" layoutY="214.0" text="AZALPENA" />
    </children>
 </AnchorPane>
