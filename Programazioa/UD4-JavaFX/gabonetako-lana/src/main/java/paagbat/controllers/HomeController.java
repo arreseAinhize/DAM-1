@@ -20,4 +20,9 @@ public class HomeController {
     private void startGameHard() throws IOException {
         App.setRoot("/paagbat/fxml/bizkaiAzalpen");
     }
+
+    @FXML
+    private void startGameIparralde() throws IOException {
+        App.setRoot("/paagbat/fxml/bizkaiAzalpen");
+    }
 }

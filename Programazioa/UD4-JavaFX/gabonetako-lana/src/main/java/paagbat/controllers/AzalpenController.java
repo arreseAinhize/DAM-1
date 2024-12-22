@@ -22,4 +22,8 @@ public class AzalpenController {
     private void switchToHard() throws IOException {
         App.setRoot("/paagbat/fxml/bizkaiaGame");
     }
+    @FXML
+    private void switchToIparralde() throws IOException {
+        App.setRoot("/paagbat/fxml/iparraldeGame");
+    }
 }
