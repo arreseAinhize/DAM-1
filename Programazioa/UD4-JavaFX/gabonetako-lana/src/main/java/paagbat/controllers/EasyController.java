@@ -40,7 +40,7 @@ public class EasyController {
 
     private final String[][] questions = {
         {"Non ospatu zen 2024ko euskal dantzari eguna?", "Baztanen", "Donostia", "Karrantza", "Donibane Garazi", "3","01.jpeg","",""},
-        {"Non ospatzen da tradizionalki aurreskua?", "Biak", "Eskontzetan", "Festetan", "Eskontzetan bakarrik", "1","02.jpg","",""},
+        {"Non ospatzen da tradizionalki aurreskua?", "Hiruretan", "Eskontzetan Bakarrik", "Ospakizunetan", "Plazetan", "3","02.jpg","",""},
         {"Zer urtean sortu zen Euskal Dantzari Biltzarra?", "1975", "1958", "1920", "1931", "2","03.jpg","",""},
         {"Zer kolore daude gehienetan euskal dantzarien jantzietan?", "Gorria, zuria edo beltza", "Urdina, gorria eta horia", "Zuria eta horia bakarrik", "Beltza eta urdina", "1","04.jpg","",""},
         {"Zein tresna da ohikoa euskal dantzetako musikan?", "Danbolina", "Trikitixa", "Adarra", "Hiruak", "4","05.jpg","",""},
@@ -48,7 +48,7 @@ public class EasyController {
         {"Zein izen du hurrengo musika instumentua?", "Trikitixa", "Alboka", "Danbolina", "Txalaparta", "3","07.jpg","",""},
         {"Zein izen du hurrengo musika instumentua?", "Txistua", "Trikitixa", "Txirula", "Txalaparta", "1","08.jpg","",""},
         {"Zein izen du hurrengo dantzak? adi musikari", "Fandangoa", "Arin-Arin", "Larrain dantza", "Atxuri beltza", "2","09.jpg","Musika","Arin-arin.mp3"},
-        {"Zein dantza-mota egiten dute tradizioki neska-mutilek elkarrekin?", "Hirurak", "Domingilo", "Fandangoa", "Arku dantza", "1","10.jpg","",""}
+        {"Zein dantza-mota egiten dute tradizioki neska-mutilek elkarrekin?", "Hirurak", "Domingilo", "Fandangoa", "Gorulari M.", "1","10.jpg","",""}
     };
 
     @FXML
@@ -123,14 +123,16 @@ public class EasyController {
     }
 
     private void endQuiz() {
-        questionLabel.setText("Quiz finished! Your score: " + score);
+        questionLabel.setText("Galdetegia bukatu da!\n Zure puntuazioa: " + score);
+        playquizbtn.setText("");
+        playquizbtn1.setText("");
+        playquizbtn2.setText("");
+        playquizbtn3.setText("");
         playquizbtn.setDisable(true);
         playquizbtn1.setDisable(true);
         playquizbtn2.setDisable(true);
         playquizbtn3.setDisable(true);
         playquizbtn4.setDisable(false);
-
-        
     }
     
     @FXML

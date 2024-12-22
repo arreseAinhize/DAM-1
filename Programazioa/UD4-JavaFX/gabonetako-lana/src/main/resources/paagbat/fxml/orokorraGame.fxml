@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controllers.EasyController">
@@ -35,7 +34,6 @@
             <Font name="Consolas Bold" size="20.0" />
          </font>
       </Button>
-      <MediaView fx:id="easymedia" fitHeight="200.0" fitWidth="400.0" layoutX="227.0" layoutY="85.0" />
       <Button fx:id="playquizbtn4" layoutX="719.0" layoutY="10.0" mnemonicParsing="false" onAction="#returHome" prefHeight="32.0" prefWidth="67.0" style="-fx-background-color: #510707; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="itzuli" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Consolas Bold" size="12.0" />
