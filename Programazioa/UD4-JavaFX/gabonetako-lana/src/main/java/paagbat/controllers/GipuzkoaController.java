@@ -4,7 +4,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import paagbat.app.App;
 
-public class MediumController {
+public class GipuzkoaController {
 
     @FXML
     private void switchToHome() throws IOException {

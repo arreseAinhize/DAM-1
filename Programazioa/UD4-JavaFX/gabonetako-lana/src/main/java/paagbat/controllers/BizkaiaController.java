@@ -12,7 +12,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import paagbat.app.App;
 
-public class EasyController {
+public class BizkaiaController {
     @FXML
     private ImageView easyImg;
 
@@ -39,20 +39,20 @@ public class EasyController {
     private int score = 0;
 
     private final String[][] questions = {
-        {"Non ospatu zen 2024ko euskal dantzari eguna?", "Baztanen", "Donostia", "Karrantza", "Donibane Garazi", "3","01.jpeg","",""},
-        {"Non ospatzen da tradizionalki aurreskua?", "Hiruretan", "Eskontzetan Bakarrik", "Ospakizunetan", "Plazetan", "3","02.jpg","",""},
-        {"Zer urtean sortu zen Euskal Dantzari Biltzarra?", "1975", "1958", "1920", "1931", "2","03.jpg","",""},
-        {"Zer kolore daude gehienetan euskal dantzarien jantzietan?", "Gorria, zuria edo beltza", "Urdina, gorria eta horia", "Zuria eta horia bakarrik", "Beltza eta urdina", "1","04.jpg","",""},
-        {"Zein tresna da ohikoa euskal dantzetako musikan?", "Danbolina", "Trikitixa", "Adarra", "Hiruak", "4","05.jpg","",""},
-        {"Zein izen du hurrengo dantzak? adi musikari", "Zapatain dantza", "Zazpi jauzi", "San petrike", "Txulalai", "4","06.jpg","Musika","Txulalai.mp3"},
-        {"Zein izen du hurrengo musika instumentua?", "Trikitixa", "Alboka", "Danbolina", "Txalaparta", "3","07.jpg","",""},
-        {"Zein izen du hurrengo musika instumentua?", "Txistua", "Trikitixa", "Txirula", "Txalaparta", "1","08.jpg","",""},
-        {"Zein izen du hurrengo dantzak? adi musikari", "Fandangoa", "Arin-Arin", "Larrain dantza", "Atxuri beltza", "2","09.jpg","Musika","Arin-arin.mp3"},
-        {"Zein dantza-mota egiten dute tradizioki neska-mutilek elkarrekin?", "Hirurak", "Domingilo", "Fandangoa", "Gorulari M.", "1","10.jpg","",""}
+        {"Non ospatuko da 2025ko bizkaiko dantzari eguna?", "Zornotza", "Lekeitio", "Sestao", "Basauri", "2","04.jpg","",""},
+        {"Zein izen du hurrengo dantzak? adi musikari", "Makil joko", "Ezpata nagusi", "Txotxongilo", "Ezpata txiki", "2","02.jpg","Musika","ezpataNagusi.mp3"},
+        {"Zein izen du hurrengo dantzak?", "Agintariena", "Agurra", "Aurrezkua", "Zeharkakoa", "1","01.jpg","",""},
+        {"Zer tresna erabiltzen dira dantzari-dantzan?", "Ezpatak eta makilak", "Arkuak", "Makilak", "Zestak", "1","05.jpg","",""},
+        {"Zein izen du hurrengo dantzak? adi musikari", "Makil joko", "Ezpata nagusi", "Txotxongilo", "Ezpata txiki", "1","08.jpg","Musika","makil.mp3"},
+        {"Zein izen du hurrengo dantzak?", "Kontrapas", "Sagar dantza", "Zinta dantza", "Kaskarot", "3","03.jpg","",""},
+        {"Non egiten dira ohituraz Erregelak dantzak?", "Lekeitio eta Ondarroan", " Bakion eta Mungian", "Gernika eta Garain", "Basauri eta Karrantzan", "3","06.jpg","",""},
+        {"Non egiten da ohituraz Karmen eguneko dantza?", "Mungian", "Bakion", "Markina-Xeimein", "Ermun", "3","07.jpg","",""},
+        {"Zein izen du hurrengo dantzak? adi musikari", "Arku dantza", "Ibarzabal arku dantza", "Gorulari", "Zinta dantza", "2","09.jpg","Musika","ibarzabal.mp3"},
+        {"Jarraitu letra:\n Golpe golpe golpeka, josi ta josi, josi ta josi,\ngolpe golpe golpeka josi ta josi ... .......", "Nik zapatak", "Bi zapatak", "Hik zapatak", "Guk zapatak", "2","10.jpg","Musika","golpegolpe.mp3"}
     };
 
     @FXML
-    public void initialize() {
+    public void initialize() { 
         loadQuestion();
     }
 
@@ -84,7 +84,7 @@ public class EasyController {
             playquizbtn2.setText(currentQuestion[2]); // Opción 2
             playquizbtn1.setText(currentQuestion[3]); // Opción 3
             playquizbtn.setText(currentQuestion[4]); // Opción 4
-            String imagePath = "/paagbat/images/orokorra/" + currentQuestion[6]; // Ajusta la ruta
+            String imagePath = "/paagbat/images/bizkaia/" + currentQuestion[6]; // Ajusta la ruta
             Image image = new Image(getClass().getResourceAsStream(imagePath));
             easyImg.setImage(image);
             if (currentQuestion[7].contains("Musika")) {

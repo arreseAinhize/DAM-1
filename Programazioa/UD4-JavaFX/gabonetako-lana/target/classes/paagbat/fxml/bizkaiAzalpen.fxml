@@ -22,6 +22,20 @@
             <Font name="Consolas Bold" size="38.0" />
          </font>
       </Button>
-      <Label layoutX="392.0" layoutY="234.0" text="AZALPENA" />
+      <Label layoutX="94.0" layoutY="175.0" prefHeight="47.0" prefWidth="648.0" text="Joko honetan, euskal dantza tradizionalei buruz duzun ezagutza frogatuko duzu. ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="94.0" layoutY="206.0" prefHeight="47.0" prefWidth="648.0" text="Askotariko 10 galdera egingo dizkizugu, oinarrizkoenetatik bitxienetara,">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="94.0" layoutY="240.0" prefHeight="47.0" prefWidth="648.0" text="kultura-ondare aberats honi buruz dakizuna erakusteko.">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

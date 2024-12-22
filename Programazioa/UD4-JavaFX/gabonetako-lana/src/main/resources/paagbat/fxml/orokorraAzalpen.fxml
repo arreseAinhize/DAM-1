@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controllers.AzalpenController">
    <children>
-      <Label layoutX="295.0" layoutY="25.0" prefHeight="71.0" prefWidth="210.0" text="OROKORRA">
+      <Label layoutX="295.0" layoutY="51.0" prefHeight="71.0" prefWidth="210.0" text="OROKORRA">
          <font>
             <Font name="Consolas Bold" size="45.0" />
          </font>
@@ -22,6 +22,19 @@
             <Font name="Consolas Bold" size="38.0" />
          </font>
       </Button>
-      <Label layoutX="372.0" layoutY="214.0" text="AZALPENA" />
+      <Label layoutX="84.0" layoutY="165.0" prefHeight="47.0" prefWidth="648.0" text="Joko honetan, euskal dantza tradizionalei buruz duzun ezagutza frogatuko duzu. ">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="84.0" layoutY="196.0" prefHeight="47.0" prefWidth="648.0" text="Askotariko 10 galdera egingo dizkizugu, oinarrizkoenetatik bitxienetara,">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="230.0" prefHeight="47.0" prefWidth="648.0" text="kultura-ondare aberats honi buruz dakizuna erakusteko.">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
