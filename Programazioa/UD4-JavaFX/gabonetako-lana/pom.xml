@@ -22,13 +22,8 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>13</version> <!-- Cambia según tu versión -->
+            <version>13</version>
         </dependency>
-        <!-- <dependency>
-            <groupId>javax.sound</groupId>
-            <artifactId>javax.sound</artifactId>
-            <version>1.0.1</version>
-        </dependency> -->
     </dependencies>
     <build>
         <plugins>

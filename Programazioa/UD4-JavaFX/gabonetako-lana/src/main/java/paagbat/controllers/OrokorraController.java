@@ -123,7 +123,7 @@ public class OrokorraController {
     }
 
     private void endQuiz() {
-        questionLabel.setText("Galdetegia bukatu da!\n Zure puntuazioa: " + score+"/10");
+        questionLabel.setText("Galdetegia bukatu da!\n Zure puntuazioa: " + score+"/"+questions.length);
         playquizbtn.setText("");
         playquizbtn1.setText("");
         playquizbtn2.setText("");
