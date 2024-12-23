@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import paagbat.app.App;
 
 public class HomeController {
-
     @FXML
     private void startGameEasy() throws IOException {
         App.setRoot("/paagbat/fxml/orokorraAzalpen");
@@ -23,6 +22,6 @@ public class HomeController {
 
     @FXML
     private void startGameIparralde() throws IOException {
-        App.setRoot("/paagbat/fxml/bizkaiAzalpen");
+        App.setRoot("/paagbat/fxml/iparraldeAzalpen");
     }
 }

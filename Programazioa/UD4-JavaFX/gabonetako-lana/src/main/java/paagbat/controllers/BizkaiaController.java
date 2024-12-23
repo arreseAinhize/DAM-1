@@ -46,9 +46,9 @@ public class BizkaiaController {
         {"Zein izen du hurrengo dantzak? adi musikari", "Makil joko", "Ezpata nagusi", "Txotxongilo", "Ezpata txiki", "1","08.jpg","Musika","makil.mp3"},
         {"Zein izen du hurrengo dantzak?", "Kontrapas", "Sagar dantza", "Zinta dantza", "Kaskarot", "3","03.jpg","",""},
         {"Non egiten dira ohituraz Erregelak dantzak?", "Lekeitio eta Ondarroan", " Bakion eta Mungian", "Gernika eta Garain", "Basauri eta Karrantzan", "3","06.jpg","",""},
-        {"Non egiten da ohituraz Karmen eguneko dantza?", "Mungian", "Bakion", "Markina-Xeimein", "Ermun", "3","07.jpg","",""},
+        {"Non egiten da ohituraz Karmen eguneko dantza?", "Mungian", "Bakion","Ermun","Markina-Xeimein", "4","07.jpg","",""},
         {"Zein izen du hurrengo dantzak? adi musikari", "Arku dantza", "Ibarzabal arku dantza", "Gorulari", "Zinta dantza", "2","09.jpg","Musika","ibarzabal.mp3"},
-        {"Jarraitu letra:\n Golpe golpe golpeka, josi ta josi, josi ta josi,\ngolpe golpe golpeka josi ta josi ... .......", "Nik zapatak", "Bi zapatak", "Hik zapatak", "Guk zapatak", "2","10.jpg","Musika","golpegolpe.mp3"}
+        {"Jarraitu letra:\nGolpe golpe golpeka, josi ta josi, josi ta josi,\ngolpe golpe golpeka josi ta josi ___ _______", "Nik zapatak", "Bi zapatak", "Hik zapatak", "Guk zapatak", "2","10.jpg","Musika","golpegolpe.mp3"}
     };
 
     @FXML
@@ -123,7 +123,7 @@ public class BizkaiaController {
     }
 
     private void endQuiz() {
-        questionLabel.setText("Galdetegia bukatu da!\n Zure puntuazioa: " + score);
+        questionLabel.setText("Galdetegia bukatu da!\n Zure puntuazioa: " + score+"/10");
         playquizbtn.setText("");
         playquizbtn1.setText("");
         playquizbtn2.setText("");
