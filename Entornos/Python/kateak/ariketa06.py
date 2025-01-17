@@ -1,0 +1,1 @@
+# Erabiltzaileak emandako hitza palindromoa den (ezkerretik eskuinera eta alderantziz berdin irakurtzen den) egiaztatu.

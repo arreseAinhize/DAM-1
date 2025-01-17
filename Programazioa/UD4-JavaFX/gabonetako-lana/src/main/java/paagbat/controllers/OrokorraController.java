@@ -40,7 +40,7 @@ public class OrokorraController {
 
     private final String[][] questions = {
         {"Non ospatu zen 2024ko euskal dantzari eguna?", "Baztanen", "Donostia", "Karrantza", "Donibane Garazi", "3","01.jpeg","",""},
-        {"Non ospatzen da tradizionalki aurreskua?", "Hiruretan", "Eskontzetan Bakarrik", "Ospakizunetan", "Plazetan", "3","02.jpg","",""},
+        {"Non dantzatzen da tradizionalki aurreskua?", "Hiruretan", "Eskontzetan Bakarrik", "Ospakizunetan", "Plazetan", "3","02.jpg","",""},
         {"Zer urtean sortu zen Euskal Dantzari Biltzarra?", "1975", "1958", "1920", "1931", "2","03.jpg","",""},
         {"Zer kolore daude gehienetan euskal dantzarien jantzietan?", "Gorria, zuria edo beltza", "Urdina, gorria eta horia", "Zuria eta horia bakarrik", "Beltza eta urdina", "1","04.jpg","",""},
         {"Zein tresna da ohikoa euskal dantzetako musikan?", "Danbolina", "Trikitixa", "Adarra", "Hiruak", "4","05.jpg","",""},

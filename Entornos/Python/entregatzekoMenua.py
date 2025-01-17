@@ -1,3 +1,5 @@
+#Egilea: Ainhize Arrese DAM-1
+
 import os
 import time
 from datetime import datetime, timedelta
@@ -16,7 +18,7 @@ def main_menu():
         if aukera == '1':
             clear()
             naturalNumbers()
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '2':
             clear()
@@ -26,61 +28,61 @@ def main_menu():
                 print(f"Faktorialaren emaitza, {num} da.")
             except ValueError:
                 print("Errorea: Zenbaki baliodun bat sartu behar duzu.")
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '3':
             clear()
             multiTable()
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '4':
             clear()
             reverseNumber()
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '5':
             clear()
             powerNumber()
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '6':
             clear()
             primeNumber()
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '7':
             clear()
             fibonacci()
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '8':
             clear()
             quadraticSolver()
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '9':
             clear()
             drawSomething()
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '10':
             clear()
             urtebetetzea()
-            time.sleep(2)
+            time.sleep(3)
 
         elif aukera == '11':
             clear()
             kalifikazioak()
-            time.sleep(5)
+            time.sleep(3)
 
         elif aukera == '12':
             print("Menutik irtete...")
-            time.sleep(2)
+            time.sleep(3)
             break
 
         else:
             print("Aukera okerra. Zahiatu berriz.")
-            time.sleep(2)
+            time.sleep(3)
 
 def naturalNumbers():
     try:

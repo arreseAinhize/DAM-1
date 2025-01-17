@@ -1,0 +1,1 @@
+# Esaldi bat eta letra bat eskatu erabiltzaileari. Letra hori zenbat aldiz agertzen den esaldian erakutsi.
