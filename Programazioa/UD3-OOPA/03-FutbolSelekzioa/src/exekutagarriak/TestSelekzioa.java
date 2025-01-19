@@ -1,11 +1,9 @@
 package exekutagarriak;
 
 import model.*;
-import java.util.Scanner;
-import java.nio.channels.Pipe.SourceChannel;
+
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.Scanner;
 
 public class TestSelekzioa {
     public static void main(String[] args) {
@@ -20,7 +18,7 @@ public class TestSelekzioa {
             System.out.println("*  1. Kideen datuak ikusi");
             System.out.println("*  2. Kideen datuak ikusi taldekatuta");
             System.out.println("*  3. Kideak alfabetikoki inprimatu");
-            System.out.println("*  4. Aldaketa");
+            System.out.println("*  4. Aldatu kidearen izena");
             System.out.println("*  5. Bilatu abizenetik");
             System.out.println("*  6. Futbolariak alfabetikoki inprimatu");
             System.out.println("*  7. Irten\n");
@@ -37,31 +35,76 @@ public class TestSelekzioa {
                     break;
                 case 3:
                     System.out.println("====================================");
+                    ArrayList<Kidea> kideak = euskalSel.getKideak();
+                    kideak.sort((k1, k2) -> k1.getIzena().compareTo(k2.getIzena()));
+                    //bi kideen arteko konparazio "compareTo" metodoaren bidez.
+                    for (Kidea k : kideak) {
+                        System.out.println(k);
+                    }
                     break;
                 case 4:
                     System.out.println("====================================");
-                    break;
+                    System.out.println("Sartu kidearen ID-a aldatu nahi duzun:");
+                    int id = in.nextInt();                     
+                    Kidea kide = null;
+
+                    for (Kidea k : euskalSel.getKideak()) { //euskalSel-en kidea bilatu
+                        if (k.getId() == id) {
+                            kide = k; // kidea aukituta "kide"-n gorde
+                            break;
+                        }
+                    }
+
+                    if (kide != null) {
+                        String izenZaharra = kide.getIzena();
+                        System.out.println("Sartu izena:"); 
+                        String izena = in.next();
+                        kide.setIzena(izena);
+                        System.out.println("Aldaketa ondo egin da.\n Izen zaharra: "+izenZaharra+" / Izen berria: " + kide.getIzena());
+                    } else {
+                        System.out.println("ID hori ez da aurkitu."); 
+                    }
+                    break; 
+
                 case 5:
                     System.out.println("====================================");
                     System.out.println("Sartu abizena:");
                     String abizena = in.next();
-                    
-                    if(euskalSel.getKideenAbizenak().equals(abizena)){
-
+                    boolean aurkituDa = false;
+                    for (Kidea k : euskalSel.getKideak()) {
+                        if (k.getAbizena().equalsIgnoreCase(abizena)) {
+                            System.out.println(k);
+                            aurkituDa = true;
+                        }
                     }
-
+                    if (!aurkituDa) {
+                        System.out.println("Ez da kiderik aurkitu abizena horrekin: " + abizena);
+                    }
                     break;
                 case 6:
                     System.out.println("====================================");
+                    ArrayList<Kidea> futbolariak = new ArrayList<>();
+                    for (Kidea k : euskalSel.getKideak()) {
+                        if (k instanceof Futbolaria) { //Kidea futbolaria den begiratu
+                            futbolariak.add(k);
+                        }
+                    }
+                    futbolariak.sort((f1, f2) -> f1.getIzena().compareTo(f2.getIzena()));
+                    //bi kideen arteko konparazio "compareTo" metodoaren bidez.
+                    for (Kidea f : futbolariak) {
+                        System.out.println(f);
+                    }
                     break;
+                
                 case 7:
                     System.out.println("====================================");
+                    System.out.println("Programatik irten zara.");
                     break;
                 default:
                     System.out.println("Aukera okerra. Saiatu berriz.");
             }
 
-        } while (aukera != 5);
+        } while (aukera != 7);
         in.close();
     }
 }
