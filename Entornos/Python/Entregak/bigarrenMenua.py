@@ -1,36 +1,38 @@
-# Egilea: Ainhize Arrese DAM-1
+# Egilea: Ainhize Arrese Ugarte
+# Data: 2025-01-16
+# Ikastaroa: PAAG - 1
 
 import os
 import time
 import re
-from datetime import datetime, timedelta
+from datetime import datetime
 
 def main_menu():
     hasieraMenua = True
     while hasieraMenua == True:
         clear()
-        print("\nZer egin nahi duzu? \n 1- Kateen eragiketak \n 2- Zerrenden eragiketak \n 3- Data eta denboren eragiketak \n 4- Menutik irten") 
+        print("Zer egin nahi duzu? \n 1- Kateen eragiketak \n 2- Zerrenden eragiketak \n 3- Data eta denboren eragiketak \n 4- Menutik irten") 
 
         aukera = input("Aukeratu: ")
 
         if aukera == '1':
             clear()
-            kateak()
+            kateak_menu()
             time.sleep(3)
 
         elif aukera == '2':
             clear()
-            zerrendak()
+            zerrendak_menu()
             time.sleep(3)
 
         elif aukera == '3':
             clear()
-            datatime()
+            datatime_menu()
             time.sleep(3)
 
         elif aukera == '4':
-            print("Menutik irtete...")
-            time.sleep(3)
+            print("\nMenutik irteten...")
+            time.sleep(2)
             hasieraMenua = False
             break
 
@@ -38,7 +40,9 @@ def main_menu():
             print("Aukera okerra. Zahiatu berriz.")
             time.sleep(3)
 
-def kateak():
+#KATEEN AZPI MENUA ETA BERE FUNTZIOAK
+
+def kateak_menu():
     kateMenua = True
     while kateMenua == True:
         clear()
@@ -62,8 +66,8 @@ def kateak():
             time.sleep(3)
 
         elif aukeraKatea == '4':
-            print("Menutik irtete...")
-            time.sleep(3)
+            print("\nHasierako menura itzultzen...")
+            time.sleep(2)
             kateMenua = False
             break
 
@@ -89,7 +93,9 @@ def kateMayMin():
     upper = katea3.upper()
     print(f"Katea: {katea3} / Katea minuskulaz: {lower} / Katea maiuskulaz: {upper}")
 
-def zerrendak():
+#ZERRENDEN AZPI MENUA ETA BERE FUNTZIOAK
+
+def zerrendak_menu():
     zerrendaMenua = True
     zerrenda0 = ["patatak", "kipulak", "esnea", "arrautzak", "kafea"]
     while zerrendaMenua:
@@ -115,8 +121,8 @@ def zerrendak():
             time.sleep(3)
 
         elif aukeraZerrenda == '4':
-            print("Menutik irtete...")
-            time.sleep(3)
+            print("\nHasierako menura itzultzen...")
+            time.sleep(2)
             zerrendaMenua = False
             break
 
@@ -162,7 +168,9 @@ def kalifikazioak():
         print(f"Ikasle hoberena: {hoberena} ({ikasleak[hoberena]:.2f})")
         print(f"Ikasle okerrena: {okerrena} ({ikasleak[okerrena]:.2f})")
 
-def datatime():
+#DATATIME AZPI MENUA ETA BERE FUNTZIOAK
+
+def datatime_menu():
     dataTimeMenua = True
     while dataTimeMenua:
         clear()
@@ -181,8 +189,8 @@ def datatime():
             time.sleep(3)
 
         elif aukeradataTime == '3':
-            print("Menutik irtete...")
-            time.sleep(3)
+            print("\nHasierako menura itzultzen...")
+            time.sleep(2)
             dataTimeMenua = False
             break
 
