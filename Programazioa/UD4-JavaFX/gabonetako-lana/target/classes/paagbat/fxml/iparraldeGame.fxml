@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controllers.IparraldeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controllers.HardController">
    <children>
       <ImageView fx:id="easyImg" fitHeight="207.0" fitWidth="370.0" layoutX="225.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="playquizbtn4" layoutX="707.0" layoutY="14.0" mnemonicParsing="false" onAction="#returHome" prefHeight="32.0" prefWidth="67.0" style="-fx-background-color: #510707; -fx-border-radius: 32px; -fx-background-radius: 32px;" text="itzuli" textAlignment="CENTER" textFill="WHITE">

@@ -44,8 +44,21 @@ public class TestSelekzioa {
                     break;
                 case 4:
                     System.out.println("====================================");
+                    String idletra;
+                    boolean idZenbakia = false;
                     System.out.println("Sartu kidearen ID-a aldatu nahi duzun:");
-                    int id = in.nextInt();                     
+                    idletra = in.next();
+                    while(!idZenbakia){
+                        try{
+                            Integer.parseInt(idletra);
+                            idZenbakia = true;
+                        }catch(NumberFormatException e){
+                            idZenbakia = false;
+                            System.out.println("Sartu kidearen ID-a aldatu nahi duzun:");
+                            idletra = in.next(); 
+                        }
+                    }
+                    int id = Integer.parseInt(idletra);
                     Kidea kide = null;
 
                     for (Kidea k : euskalSel.getKideak()) { //euskalSel-en kidea bilatu
@@ -89,12 +102,24 @@ public class TestSelekzioa {
                             futbolariak.add(k);
                         }
                     }
+
+
                     futbolariak.sort((f1, f2) -> f1.getIzena().compareTo(f2.getIzena()));
                     //bi kideen arteko konparazio "compareTo" metodoaren bidez.
                     for (Kidea f : futbolariak) {
                         System.out.println(f);
                     }
                     break;
+
+                    /*
+                     *  kideak.sort((f1, f2) -> f1.getIzena().compareTo(f2.getIzena()));
+                     *  for(int i = 0; i <= kideak.size() ; i++){
+                     *      Kidea kide = kideak.get(i);
+                     *      if(i instanceof Furbolaria){
+                     *          System.out.println(kide);
+                     *      }
+                     *  }
+                     */
                 
                 case 7:
                     System.out.println("====================================");
