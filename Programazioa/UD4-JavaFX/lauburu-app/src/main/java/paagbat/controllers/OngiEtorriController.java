@@ -23,11 +23,6 @@ public class OngiEtorriController {
     private Button idiomBtn;
 
     @FXML
-    private void switchToHasiera() throws IOException {
-        App.setRoot("/paagbat/fxml/home");
-    }
-
-    @FXML
     public void initialize() {
         // Centrar el título "ONGI ETORRI"
         AnchorPane.setTopAnchor(OngiLabel, 80.0);
@@ -43,8 +38,8 @@ public class OngiEtorriController {
 
         // Centrar el botón "Hasi jokoa" en la parte inferior
         AnchorPane.setBottomAnchor(startBtn, 20.0);
-        AnchorPane.setLeftAnchor(startBtn, 295.5);
-        AnchorPane.setRightAnchor(startBtn, 295.5);
+        AnchorPane.setLeftAnchor(startBtn, 395.5);
+        AnchorPane.setRightAnchor(startBtn, 395.5);
         startBtn.setAlignment(Pos.CENTER);
 
         // Botón de idioma en la esquina superior izquierda
@@ -54,6 +49,10 @@ public class OngiEtorriController {
         // Botón de home en la esquina superior derecha
         AnchorPane.setTopAnchor(homeBtn, 20.0);
         AnchorPane.setRightAnchor(homeBtn, 20.0);
+    }
 
+    @FXML
+    private void switchToHasiera() throws IOException {
+        App.setRoot("/paagbat/fxml/hasiera");
     }
 }

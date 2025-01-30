@@ -7,47 +7,46 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-    prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1E1E1E;"
-    xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="paagbat.controllers.PrimaryController">
+    prefHeight="400.0" prefWidth="600.0"
+    xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <ImageView fx:id="imgLogo" fitHeight="150.0" fitWidth="200.0" layoutX="54.0" layoutY="35.0"
             pickOnBounds="true" preserveRatio="true" />
-        <Label fx:id="IntroText" layoutX="372.0" layoutY="92.0" text="Label" textFill="#f2f2f2">
+        <Label fx:id="IntroText" layoutX="372.0" layoutY="92.0" text="Label">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
         <Button fx:id="Button0maila" layoutX="73.0" layoutY="223.0" mnemonicParsing="false"
-            prefHeight="62.0" prefWidth="200.0" style="-fx-background-color: #4A90E2;"
-            text="0. Maila" textFill="#f2f2f2">
+            prefHeight="62.0" prefWidth="200.0"
+            text="0. Maila">
             <font>
                 <Font name="System Bold" size="26.0" />
             </font>
         </Button>
         <Button fx:id="Button3maila" layoutX="327.0" layoutY="305.0" mnemonicParsing="false"
-            prefHeight="62.0" prefWidth="200.0" style="-fx-background-color: #4A90E2;"
-            text="3. Maila" textFill="#f2f2f2">
+            prefHeight="62.0" prefWidth="200.0"
+            text="3. Maila">
             <font>
                 <Font name="System Bold" size="26.0" />
             </font>
         </Button>
         <Button fx:id="Button2maila" layoutX="73.0" layoutY="305.0" mnemonicParsing="false"
-            prefHeight="62.0" prefWidth="200.0" style="-fx-background-color: #4A90E2;"
-            text="2. Maila" textFill="#f2f2f2">
+            prefHeight="62.0" prefWidth="200.0"
+            text="2. Maila">
             <font>
                 <Font name="System Bold" size="26.0" />
             </font>
         </Button>
         <Button fx:id="Button1maila" layoutX="327.0" layoutY="223.0" mnemonicParsing="false"
-            prefHeight="62.0" prefWidth="200.0" style="-fx-background-color: #4A90E2;"
-            text="1. Maila" textFill="#f2f2f2">
+            prefHeight="62.0" prefWidth="200.0"
+            text="1. Maila">
             <font>
                 <Font name="System Bold" size="26.0" />
             </font>
         </Button>
         <Button fx:id="buttonHizkuntza" layoutX="542.0" layoutY="20.0" mnemonicParsing="false"
-            style="-fx-background-color: #4080c9;" text="🇬🇧" textFill="#f2f2f2">
+            text="🇬🇧">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>

@@ -30,9 +30,6 @@ public class App extends Application {
         // Establecer la aplicación en modo de pantalla completa
         stage.setFullScreen(true);
         
-        // Si deseas que la aplicación se ajuste a la resolución de la pantalla
-        // puedes usar el siguiente método para obtener el tamaño de la pantalla
-        // y ajustar la escena en consecuencia.
         double screenWidth = Screen.getPrimary().getBounds().getWidth();
         double screenHeight = Screen.getPrimary().getBounds().getHeight();
 
