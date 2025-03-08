@@ -1,4 +1,4 @@
-package herentziamemberabstraktobarik;
+package herentziamembeabstraktobarik;
 
 public class TestMonster {
     public static void main(String[] args) {
