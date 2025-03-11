@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vboxErroa" prefHeight="400.0" prefWidth="640.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controller.HasierakoaController">
+  <children>
+      <Label id="lbIzenburua" text="JavaFX Kontrolak ezagutzen:" />
+      
+      <Button fx:id="btnCheckBox" mnemonicParsing="false" onAction="#handleCheckBox" prefHeight="24.0" prefWidth="300.0" text="CheckBox" />
+      <Button fx:id="btnChoiceBox" mnemonicParsing="false" onAction="#handleChoiceBox" prefHeight="24.0" prefWidth="300.0" text="ChoiceBox" />
+      <Button fx:id="btnTextArea" mnemonicParsing="false" onAction="#handleTextArea" prefHeight="24.0" prefWidth="300.0" text="TextArea" />
+      <Button fx:id="btnTableView" mnemonicParsing="false" onAction="#handleTableView" prefHeight="24.0" prefWidth="300.0" text="TableView" />
+      <Button fx:id="btnTableView1" mnemonicParsing="false" onAction="#handleTableView" prefHeight="24.0" prefWidth="300.0" text="..." />
+    
+  </children>
+
+</VBox>
