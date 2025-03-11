@@ -15,6 +15,9 @@ public class Herria {
     public String getProbintzia() {
         return probintzia;
     }
+    public String getHerria(){
+        return herriIzena + " (" + probintzia + ")";
+    }
     public void setHerriIzena(String herria) {
         this.herriIzena = herria;
     }
