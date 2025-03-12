@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controller.CheckBoxController">
+   <children>
+      <Label id="lbIzenburua" text="CheckBox (ak lantzeko eszena)" />
+      <Label text="Hauetako zein herritan egon zara?" />
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <VBox fx:id="vBoxHerriak" prefHeight="200.0" prefWidth="200.0" spacing="20.0" />
+            <VBox prefHeight="200.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="Guztira:" />
+                  <Label layoutX="10.0" layoutY="10.0" text="Ezagunak:" />
+               </children>
+            </VBox>
+            <VBox fx:id="vBoxHerriak1" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Label fx:id="lbGuztira" text="    " />
+                  <Label fx:id="lbEzagunak" text="   " />
+               </children></VBox>
+         </children>
+      </HBox>
+      <Button fx:id="btnAtzera" mnemonicParsing="false" onAction="#handleAtzera" prefHeight="24.0" prefWidth="300.0" text="ATZERA" />
+   </children>
+</VBox>
