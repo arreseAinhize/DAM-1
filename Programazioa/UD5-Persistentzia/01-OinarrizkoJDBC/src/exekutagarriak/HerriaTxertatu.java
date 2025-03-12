@@ -16,6 +16,7 @@ public class HerriaTxertatu {
 
             Herria herriBerria = new Herria(HerriIzena,HerriProbintzia);
             herrienAtzipena.txertatu(herriBerria);
+            herrienAtzipena.erakutsiDatuak();
         }else{
             System.out.println("Ez zara konektatua");
         }

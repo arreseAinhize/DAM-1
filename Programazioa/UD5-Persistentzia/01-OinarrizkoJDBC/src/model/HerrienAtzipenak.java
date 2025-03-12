@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 import model.base.Herria;
 
 /**
@@ -36,8 +38,7 @@ public class HerrienAtzipenak {
     }
 
     /**
-     * Zerbitzariaren helbidea itzultzen du.
-     * 
+     * Zerbitzariaren helbidea itzultzen du. 
      * @return Zerbitzariaren helbidea.
      */
     public String getServer() {
@@ -46,7 +47,6 @@ public class HerrienAtzipenak {
 
     /**
      * Datu-basearen izena itzultzen du.
-     * 
      * @return Datu-basearen izena.
      */
     public String getDb() {
@@ -55,7 +55,6 @@ public class HerrienAtzipenak {
 
     /**
      * Taularen izena itzultzen du.
-     * 
      * @return Taularen izena.
      */
     public String getTaula() {
@@ -64,7 +63,6 @@ public class HerrienAtzipenak {
 
     /**
      * Erabiltzailearen izena itzultzen du.
-     * 
      * @return Erabiltzailearen izena.
      */
     public String getUser() {
@@ -73,7 +71,6 @@ public class HerrienAtzipenak {
 
     /**
      * Pasahitza itzultzen du.
-     * 
      * @return Pasahitza.
      */
     public String getPass() {
@@ -102,7 +99,6 @@ public class HerrienAtzipenak {
 
     /**
      * Datu-basearekin konexioa ezartzen du.
-     * 
      * @return Datu-basearen konexioa edo null errore bat gertatzen bada.
      */
     public Connection konektatu() {
@@ -142,15 +138,14 @@ public class HerrienAtzipenak {
 
     /**
      * Herri berri bat taulan txertatzen du.
-     * 
      * @param herria Txertatu beharreko herria.
      */
     public void txertatu(Herria herria) {
-        String sql2 = "INSERT INTO Herriak(Herria, Probintzia) VALUES(?, ?)";
+        String sqlInsert = "INSERT INTO Herriak(Herria, Probintzia) VALUES(?, ?)";
 
         try (Connection conn = konektatu()) {
-            if (!herriaBadago(herria)) { // Si no existe, insertamos
-                try (PreparedStatement pstmt = conn.prepareStatement(sql2)) {
+            if (conn != null && !herriaBadago(herria)) { 
+                try (PreparedStatement pstmt = conn.prepareStatement(sqlInsert)) {
                     pstmt.setString(1, herria.getHerria());
                     pstmt.setString(2, herria.getProbintzia());
                     pstmt.executeUpdate();
@@ -160,50 +155,38 @@ public class HerrienAtzipenak {
                 System.out.println(herria + " dagoeneko existitzen da.");
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Errorea: " + e.getMessage());
         }
     }
 
     public boolean herriaBadago(Herria herria) {
-        String sql = "SELECT COUNT(*) FROM Herriak WHERE Herria = '?' AND Probintzia = '?'";
+        String sqlCheck = "SELECT COUNT(*) FROM Herriak WHERE Herria = ? AND Probintzia = ?";
+        
+        try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sqlCheck)) {
+            pstmt.setString(1, herria.getHerria());
+            pstmt.setString(2, herria.getProbintzia());
 
-        try (Connection conn = konektatu();
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            // Asignar valores a los parámetros
-            pstmt.setString(1, herria.getHerriIzena()); // Suponiendo que Herria tiene un método getIzena()
-            pstmt.setString(2, herria.getProbintzia()); // Suponiendo que Herria tiene un método getProbintzia()
-
-            // Ejecutar la consulta
             try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) {
-                    System.out.println("Herria existitzen da");
-                    return rs.getInt(1) > 0; // Si COUNT(*) > 0, significa que el registro existe
-                }else{
-                    return false;
-                }
+                return rs.next() && rs.getInt(1) > 0;
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Errorea: " + e.getMessage());
         }
-        return false; // En caso de error, devolver false
+        return false;
     }
 
     /**
      * Taulako erregistro guztiak kontsultatzen eta bistaratzen ditu.
      */
-    public void kontsultatuTaula() {
-        String sql = "SELECT * FROM " + taula;
-
-        try (Connection conn = konektatu();
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            System.out.println("Herria (Probintzia)");
-            System.out.println("=====================================");
-            ResultSet rs = pstmt.executeQuery();
+    public void erakutsiDatuak() {
+        String sqlSelect = "SELECT * FROM " + taula;
+        try (Connection conn = konektatu(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sqlSelect)) {
+            System.out.println(taula+" taulan dauden datuak:");
             while (rs.next()) {
-                System.out.println(new Herria(rs.getString("herria"), rs.getString("probintzia")));
+                System.out.println(rs.getString("Herria") + " - " + rs.getString("Probintzia"));
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Errorea datuak erakustean: " + e.getMessage());
         }
     }
 }
