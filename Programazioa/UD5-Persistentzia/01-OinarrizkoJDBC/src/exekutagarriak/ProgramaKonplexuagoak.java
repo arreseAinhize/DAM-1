@@ -6,13 +6,22 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import model.HerrienAtzipenak;
 
+/**
+ * ProgramaKonplexuagoak klasea hainbat funtzionalitate eskaintzen dituen programa bat da.
+ * Herrien informazioa bistaratzea, erabiltzaileari ausazko herri bat erakustea eta 
+ * log fitxategiak bistaratzeko aukera ematen du.
+ */
 public class ProgramaKonplexuagoak {
     private static HerrienAtzipenak atzipenak = new HerrienAtzipenak("localhost", "HerrienDBa", "Herriak", "ikaslea", "ikaslea");
     private static HerrienAtzipenak logAtzipenak = new HerrienAtzipenak("localhost", "HerrienDBa", "Logs2", "ikaslea", "ikaslea");
 
     private static Scanner in = new Scanner(System.in);
 
-    
+    /**
+     * Programa exekutatzen duen metodo nagusia.
+     * Erabiltzaileari menua erakusten dio eta aukeratutako ekintza burutzen du.
+     * @throws InterruptedException Thread.sleep() metodoa erabiltzen denean etenaldiak gertatzen direlako.
+     */
     public static void main(String[] args) throws InterruptedException {
         int aukera;
         while (true) {
@@ -61,8 +70,8 @@ public class ProgramaKonplexuagoak {
     }
 
     /**
-     * Erabiltzaileak ausazko herri bat eta bere probintzia erakusten ditu.
-     * Erabiltzaileak probintzia zuzena adierazi behar du.
+     * Erabiltzaileari ausazko herri bat erakusten dio eta zein probintziakoa den galdetzen dio.
+     * Erabiltzaileak erantzuna sartzen du eta programak zuzena edo okerra den egiaztatzen du.
      */
     public static void ausazkoHerriEtaProbintzia() {
         List<String> herriak = atzipenak.getHerriIzenak();
@@ -119,6 +128,10 @@ public class ProgramaKonplexuagoak {
         }
     }
 
+    /**
+     * Log-en txostena bistaratzen du, aurretik erregistratutako log-ekin.
+     * Log-ak datu-baseko log taulan gordetzen dira eta programa honek bistaratzen ditu.
+     */
     public static void logakBistaratu(){
             // Obtener los registros de logs
             List<String> logs = logAtzipenak.logakEskuratu();
