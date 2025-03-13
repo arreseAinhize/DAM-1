@@ -19,10 +19,11 @@ public class ProgramarenTesterra {
      * aukeratutako ekintza exekutatzea kudeatzen du.
      * @param args Programaren argumentuak (ez da erabiltzen).
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
     
         int aukera;
         while (true) {
+            kontsolaGarbitu();
             System.out.println("\n=========================================");
             System.out.println("              MENU NAGUSIA         ");
             System.out.println("=========================================");
@@ -42,21 +43,32 @@ public class ProgramarenTesterra {
             switch (aukera) {
                 case 1:
                     herriaTxertatu();
+                    Thread.sleep(2000);
                     break;
                 case 2:
                     herriakBistaratu();
+                    Thread.sleep(2000);
+
                     break;
                 case 3:
                     probintziakoHerriakBistaratu();
+                    Thread.sleep(2000);
+
                     break;
                 case 4:
                     herriarenProbintziaErakutsi();
+                    Thread.sleep(2000);
+
                     break;
                 case 5:
                     herriGuztienIzenakBistaratu();
+                    Thread.sleep(2000);
+
                     break;
                 case 6:
                     herriaEzabatu();
+                    Thread.sleep(2000);
+
                     break;
                 case 7:
                     System.out.println("Programatik irteten...");
@@ -65,6 +77,8 @@ public class ProgramarenTesterra {
                     break;
                 default:
                     System.out.println("Aukera okerra! Saiatu berriro.");
+                    Thread.sleep(2000);
+
                     break;
             }
         }
@@ -146,4 +160,12 @@ public class ProgramarenTesterra {
         String probintzia = in.nextLine();
         atzipenak.ezabatu(new Herria(herria, probintzia));
     }
+
+    /**
+     * Programaren kontsola garbitsen du.
+     */
+    public static void kontsolaGarbitu() {  
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
+    } 
 }

@@ -145,7 +145,7 @@ public class HerrienAtzipenak {
         String sqlCheck = "SELECT COUNT(*) FROM Herriak WHERE Herria = ? AND Probintzia = ?";
         
         try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sqlCheck)) {
-            pstmt.setString(1, herria.getHerria());
+            pstmt.setString(1, herria.getHerriIzena());
             pstmt.setString(2, herria.getProbintzia());
 
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -168,7 +168,7 @@ public class HerrienAtzipenak {
         }
         String sqlInsert = "INSERT INTO " + taula + "(Herria, Probintzia) VALUES(?, ?)";
         try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sqlInsert)) {
-            pstmt.setString(1, herria.getHerria());
+            pstmt.setString(1, herria.getHerriIzena());
             pstmt.setString(2, herria.getProbintzia());
             pstmt.executeUpdate();
             System.out.println(herria + " ondo txertatu da.");
@@ -203,7 +203,7 @@ public class HerrienAtzipenak {
         }
         String sqlDelete = "DELETE FROM " + taula + " WHERE Herria = ? AND Probintzia = ?";
         try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sqlDelete)) {
-            pstmt.setString(1, herria.getHerria());
+            pstmt.setString(1, herria.getHerriIzena());
             pstmt.setString(2, herria.getProbintzia());
             pstmt.executeUpdate();
             System.out.println(herria + " ondo ezabatu da.");
