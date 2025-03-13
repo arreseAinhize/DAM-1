@@ -8,7 +8,57 @@ import model.HerrienAtzipenak;
 
 public class ProgramaKonplexuagoak {
     private static HerrienAtzipenak atzipenak = new HerrienAtzipenak("localhost", "HerrienDBa", "Herriak", "ikaslea", "ikaslea");
+    private static HerrienAtzipenak logAtzipenak = new HerrienAtzipenak("localhost", "HerrienDBa", "Logs2", "ikaslea", "ikaslea");
+
     private static Scanner in = new Scanner(System.in);
+
+    
+    public static void main(String[] args) throws InterruptedException {
+        int aukera;
+        while (true) {
+            kontsolaGarbitu();
+            System.out.println("\n====================================");
+            System.out.println("             MENU NAGUSIA         ");
+            System.out.println("====================================");
+            System.out.println(" 1 - Herri baten probintzia asmatu");
+            System.out.println(" 2 - Herrien txostena bistaratu");
+            System.out.println(" 3 - Log-en txostena eskuratu");
+            System.out.println(" 4 - Menua itxi");
+            System.out.println("====================================");
+            System.out.print("Aukeratu aukera: ");
+
+            aukera = in.nextInt();
+            in.nextLine();
+
+            switch (aukera) {
+                case 1:
+                    ausazkoHerriEtaProbintzia();
+                    Thread.sleep(2000);
+                    break;
+                case 2:
+                    herrienTxostentxoa();
+                    Thread.sleep(2000);
+                    break;
+
+                case 3:
+                    logakBistaratu();
+                    Thread.sleep(2000);
+                    break;
+
+                case 4:
+                    System.out.println("Programatik irteten...");
+                    in.close();
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Aukera okerra! Saiatu berriro.");
+                    Thread.sleep(2000);
+
+                    break;
+            }
+        }
+    
+    }
 
     /**
      * Erabiltzaileak ausazko herri bat eta bere probintzia erakusten ditu.
@@ -68,4 +118,26 @@ public class ProgramaKonplexuagoak {
             }
         }
     }
+
+    public static void logakBistaratu(){
+            // Obtener los registros de logs
+            List<String> logs = logAtzipenak.logakEskuratu();
+        
+            System.out.println("Logs txostentxoa:");
+        
+            // Mostrar todos los registros de logs
+            for (String log : logs) {
+                System.out.println(log);
+            
+        }
+        
+    }
+
+    /**
+     * Programaren kontsola garbitsen du.
+     */
+    public static void kontsolaGarbitu() {  
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
+    } 
 }
