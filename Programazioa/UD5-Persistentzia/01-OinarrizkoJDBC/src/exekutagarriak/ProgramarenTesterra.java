@@ -17,7 +17,6 @@ public class ProgramarenTesterra {
     /**
      * Programaren hasiera. Menuko aukerak erakusten ditu eta erabiltzaileak 
      * aukeratutako ekintza exekutatzea kudeatzen du.
-     * @param args Programaren argumentuak (ez da erabiltzen).
      */
     public static void main(String[] args) throws InterruptedException {
     

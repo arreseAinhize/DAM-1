@@ -95,6 +95,10 @@ public class HerrienAtzipenak {
         this.pass = pass;
     }
 
+    /**
+     * Datu-basearekin konexioa ezartzen du.
+     * @return Datu-basearen konexioa.
+     */
     public Connection konektatu() {
         if (connection == null) {
             String url = "jdbc:mariadb://" + server + "/" + db;
@@ -107,6 +111,10 @@ public class HerrienAtzipenak {
         return connection;
     }
 
+    /**
+     * SQL erroreak maneiatzen ditu. 
+     * @param e SQLException objektua.
+     */
     private void handleSQLException(SQLException e) {
         if (e.getErrorCode() == 1045)
             System.out.println("Erabiltzaile edo pasahitz okerrak");
@@ -116,6 +124,9 @@ public class HerrienAtzipenak {
             System.out.println(e.getErrorCode() + "-" + e.getMessage());
     }
 
+    /**
+     * Datu-basearekin konexioa ixten du.
+     */
     public void closeConnection() {
         if (connection != null) {
             try {
@@ -127,6 +138,10 @@ public class HerrienAtzipenak {
         }
     }
 
+    /**
+     * Herrien kopurua kontsultatzen du datu-basean. 
+     * @return Herrien kopurua.
+     */
     public int kontsultatuKopurua() {
         String sqlSelectKopurua = "SELECT COUNT(*) AS Kopurua FROM " + taula;
         try (PreparedStatement pstmt = konektatu().prepareStatement(sqlSelectKopurua)) {
@@ -140,6 +155,11 @@ public class HerrienAtzipenak {
         }
     }
 
+    /**
+     * Herri bat datu-basean existitzen den egiaztatzen du. 
+     * @param herria Herria objektua.
+     * @return True, herria badago; bestela, false.
+     */
     public boolean herriaBadago(Herria herria) {
         String sqlCheck = "SELECT COUNT(*) FROM " + taula + " WHERE Herria = ? AND Probintzia = ?";
         
@@ -157,6 +177,10 @@ public class HerrienAtzipenak {
         return false;
     }
 
+    /**
+     * Herri bat txertatzen du datu-basean. 
+     * @param herria Herria objektua.
+     */
     public void txertatu(Herria herria) {
         if (herriaBadago(herria)) {
             System.out.println(herria + " dagoeneko existitzen da.");
@@ -174,6 +198,11 @@ public class HerrienAtzipenak {
         }
     }
 
+    /**
+     * Datu-baseko taulako datu guztiak bistaratzen ditu.
+     * Herria eta Probintzia zutabeen balioak erakusten ditu kontsolan. 
+     * SQLException gertatzen bada, errore mezu bat bistaratuko da.
+     */
     public void erakutsiDatuak() {
         String sqlSelect = "SELECT * FROM " + taula;
         try (Statement stmt = konektatu().createStatement(); ResultSet rs = stmt.executeQuery(sqlSelect)) {
@@ -187,6 +216,12 @@ public class HerrienAtzipenak {
         }
     }
 
+    /**
+     * Datu-baseko herrien taulatik emandako herria ezabatzen du.
+     * @param herria Ezabatu nahi den herria.
+     * Herria datu-basean ez badago, mezu bat bistaratzen da.
+     * SQLException gertatzen bada, errore mezu bat agertuko da.
+     */
     public void ezabatu(Herria herria) {
         if (!herriaBadago(herria)) {
             System.out.println(herria + " ez da existitzen datu-basean.");
@@ -204,6 +239,11 @@ public class HerrienAtzipenak {
         }
     }
 
+    /**
+     * Herri baten probintzia itzultzen du. 
+     * @param herria Bilatu nahi den herriaren izena.
+     * @return Herri horren probintzia, edo null herria existitzen ez bada.
+     */
     public String getProbintzia(String herria) {
         String probintzia = null;
         String sqlSelect = "SELECT Probintzia FROM " + taula + " WHERE Herria = ?";
@@ -223,6 +263,11 @@ public class HerrienAtzipenak {
         return probintzia;
     }
 
+    /**
+     * Probintzia jakin bateko herrien izen-zerrenda itzultzen du. 
+     * @param probintzia Probintziaren izena.
+     * @return Probintzia horretan dauden herrien zerrenda.
+     */
     public List<String> getProbintziaBatekoHerriak(String probintzia) {
         List<String> herriak = new ArrayList<>();
         String sqlSelect = "SELECT Herria FROM " + taula + " WHERE Probintzia = ?";
@@ -241,6 +286,10 @@ public class HerrienAtzipenak {
         return herriak;
     }
 
+    /**
+     * Datu-baseko erregistro guztiak lortzen ditu. 
+     * @return Herrien zerrenda.
+     */
     public List<String> getHerriIzenak() {
         List<String> herriak = new ArrayList<>();
         String sqlSelect = "SELECT Herria FROM " + taula;
@@ -257,6 +306,11 @@ public class HerrienAtzipenak {
         return herriak;
     }
 
+    /**
+     * Ekintza bat log taulan erregistratzen du. 
+     * @param user   Erabiltzailearen izena.
+     * @param action Burututako ekintza.
+     */
     private void logenErregistroa(String user, String action) {
         String sqlLog = "INSERT INTO Logs (user, action) VALUES (?, ?)";
         try (PreparedStatement pstmt = konektatu().prepareStatement(sqlLog)) {
@@ -268,6 +322,10 @@ public class HerrienAtzipenak {
         }
     }
 
+    /**
+     * Log taulako erregistro guztiak itzultzen ditu. 
+     * @return Log erregistroen zerrenda.
+     */
     public List<String> logakEskuratu() {
         List<String> logs = new ArrayList<>();
         String sqlSelectLogs = "SELECT data, user, action FROM Logs";
@@ -293,6 +351,9 @@ public class HerrienAtzipenak {
         return logs;
     }
 
+    /**
+     * Datu-baseko konexioa amaitzean ixten da.
+     */
     public void finalize() {
         closeConnection();
     }
