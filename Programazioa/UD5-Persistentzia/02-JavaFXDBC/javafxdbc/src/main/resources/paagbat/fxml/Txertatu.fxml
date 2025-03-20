@@ -20,7 +20,7 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Probintzia: " />
+                  <Label  text="Probintzia: " />
                   <TextField fx:id="txfProbintzia" />
                </children>
             </HBox>

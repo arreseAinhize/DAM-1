@@ -140,10 +140,6 @@ public class HerrienAtzipenak {
     }
 
     public void txertatu(Herria herria) {
-        if (herriaBadago(herria)) {
-            System.out.println(herria + " dagoeneko existitzen da.");
-            return;
-        }
         String sqlInsert = "INSERT INTO " + taula + "(Herria, Probintzia) VALUES(?, ?)";
         try (PreparedStatement pstmt = konektatu().prepareStatement(sqlInsert)) {
             pstmt.setString(1, herria.getHerriIzena());
@@ -216,6 +212,43 @@ public class HerrienAtzipenak {
         
         return herriak;
     }
+
+    public void aldatuHerria(String herriZaharra, Herria herriaBerria) {
+        String sqlUpdate = "UPDATE " + taula + " SET Herria = ?, Probintzia = ? WHERE Herria = ?";
+        try (PreparedStatement pstmt = konektatu().prepareStatement(sqlUpdate)) {
+            pstmt.setString(1, herriaBerria.getHerriIzena());
+            pstmt.setString(2, herriaBerria.getProbintzia());
+            pstmt.setString(3, herriZaharra);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Errorea eguneratzean: " + e.getMessage());
+        }
+    }
+    
+
+    public void aldatuIzena(String herriZaharra, String izenBerria) {
+        String sqlUpdate = "UPDATE " + taula + " SET Herria = ? WHERE Herria = ?";
+        try (PreparedStatement pstmt = konektatu().prepareStatement(sqlUpdate)) {
+            pstmt.setString(1, izenBerria);
+            pstmt.setString(2, herriZaharra);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Errorea izena aldatzean: " + e.getMessage());
+        }
+    }
+    
+
+    public void aldatuProbintzia(String herriIzena, String probintziaBerria) {
+        String sqlUpdate = "UPDATE " + taula + " SET Probintzia = ? WHERE Herria = ?";
+        try (PreparedStatement pstmt = konektatu().prepareStatement(sqlUpdate)) {
+            pstmt.setString(1, probintziaBerria);
+            pstmt.setString(2, herriIzena);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Errorea probintzia aldatzean: " + e.getMessage());
+        }
+    }
+    
 
     public void finalize() {
         closeConnection();

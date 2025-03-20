@@ -41,12 +41,23 @@ public class Txertatu {
         String izena = txfIzena.getText();
         String probintzia = txfProbintzia.getText();
 
-        if (izena.isEmpty() || probintzia.isEmpty()) {
+        if (izena.isEmpty() && probintzia.isEmpty()) {
             lbMezua.setText("Izena eta Probintzia eremuak osatuta izan behar dira.");
-            return;  // Evita que el código siga ejecutándose
+            return;
+        }else if(izena.isEmpty() && !probintzia.isEmpty()){
+            lbMezua.setText("Izena eremua osatuta izan behar da.");
+            return;
+        }else if(probintzia.isEmpty() && !izena.isEmpty()){
+            lbMezua.setText("Probintzia eremua osatuta izan behar da.");
+            return;
         }
-        App.herriak.txertatu(new Herria(izena, probintzia));
-        lbMezua.setText("Herria ondo txertatu da!");
+        if (App.herriak.herriaBadago(new Herria(izena, probintzia))) {
+            lbMezua.setText("Herria aurretik sortua dago.");
+            return;
+        }else{
+            App.herriak.txertatu(new Herria(izena, probintzia));
+            lbMezua.setText(izena + " herria ondo txertatu da!");
+        }
     }
 
     @FXML

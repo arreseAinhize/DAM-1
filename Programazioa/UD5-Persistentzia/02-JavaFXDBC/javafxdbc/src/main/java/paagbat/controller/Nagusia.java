@@ -29,6 +29,11 @@ public class Nagusia {
     }
 
     @FXML
+    void handleAldatu() throws IOException {
+        App.setRoot("Aldatu");
+    }
+
+    @FXML
     void handleIrten() throws IOException {
         Platform.exit();
     }

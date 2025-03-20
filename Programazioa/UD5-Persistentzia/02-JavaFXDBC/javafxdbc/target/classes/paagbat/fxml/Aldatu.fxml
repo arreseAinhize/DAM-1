@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="paagbat.controller.Aldatu">
+   <children>
+      <VBox fx:id="vBoxHerriak" prefHeight="200.0" prefWidth="200.0" spacing="20.0" />
+      <Label fx:id="lbMezua" text="" />
+
+      <!-- Opciones de cambio como CheckBox -->
+      <HBox>
+         <children>
+            <CheckBox fx:id="chkNombre" text="Izena aldatu" visible="false"/>
+            <CheckBox fx:id="chkProvincia" text="Probintzia aldatu" visible="false"/>
+            <CheckBox fx:id="chkAmbos" text="Biak aldatu" visible="false"/>
+         </children>
+      </HBox>
+
+      <VBox fx:id="vBoxHerriarenDatuak" prefHeight="200.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label fx:id="lbMezua" text="" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lbIzena" />
+                  <TextField fx:id="txfIzena" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lbProbintzia" />
+                  <TextField fx:id="txfProbintzia" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+
+      <HBox>
+         <children>
+            <Button fx:id="btnAtzera" text="ATZERA" onAction="#handleAtzera"/>
+            <Button fx:id="btnAldatu" text="ALDATU" onAction="#handleAldatu"/>
+         </children>
+      </HBox>
+   </children>
+</VBox>
