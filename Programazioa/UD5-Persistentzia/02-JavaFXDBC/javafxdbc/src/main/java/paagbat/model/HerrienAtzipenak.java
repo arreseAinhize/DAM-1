@@ -1,5 +1,4 @@
-package model;
-
+package paagbat.model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,11 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.base.Herria;
+import paagbat.model.base.Herria;
 
-/**
- * Datu-basearekin konektatzeko eta herrien informazioa atzitzeko klasea.
- */
 public class HerrienAtzipenak {
     private String server;
     private String db;
@@ -21,6 +17,7 @@ public class HerrienAtzipenak {
     private String user;
     private String pass;
     private Connection connection;
+    public List<String> herrienZerrenda = new ArrayList<>();
 
     /**
      * Eraikitzailea. Datu-basearen konfigurazioa ezartzen du.
@@ -38,7 +35,6 @@ public class HerrienAtzipenak {
         this.user = user;
         this.pass = pass;
     }
-
     /**
      * Zerbitzariaren helbidea itzultzen du. 
      * @return Zerbitzariaren helbidea.
@@ -127,19 +123,6 @@ public class HerrienAtzipenak {
         }
     }
 
-    public int kontsultatuKopurua() {
-        String sqlSelectKopurua = "SELECT COUNT(*) AS Kopurua FROM " + taula;
-        try (PreparedStatement pstmt = konektatu().prepareStatement(sqlSelectKopurua)) {
-            ResultSet rs = pstmt.executeQuery();
-            rs.next();
-            logenErregistroa(user, "Datu baseko herriak taulako, herri kopurua eskuratu.");
-            return rs.getInt(1);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return -1;
-        }
-    }
-
     public boolean herriaBadago(Herria herria) {
         String sqlCheck = "SELECT COUNT(*) FROM " + taula + " WHERE Herria = ? AND Probintzia = ?";
         
@@ -148,7 +131,6 @@ public class HerrienAtzipenak {
             pstmt.setString(2, herria.getProbintzia());
 
             try (ResultSet rs = pstmt.executeQuery()) {
-                logenErregistroa(user, "Datu baseko herriak taulako, herri bat badagoen begiratu.");
                 return rs.next() && rs.getInt(1) > 0;
             }
         } catch (SQLException e) {
@@ -167,24 +149,24 @@ public class HerrienAtzipenak {
             pstmt.setString(1, herria.getHerriIzena());
             pstmt.setString(2, herria.getProbintzia());
             pstmt.executeUpdate();
-            System.out.println(herria + " ondo txertatu da.");
-            logenErregistroa(user, "Datu baseko herriak taulan, herri berri bat txertatu.");
         } catch (SQLException e) {
             System.out.println("Errorea txertatzean: " + e.getMessage());
         }
     }
 
-    public void erakutsiDatuak() {
+    public List<String> erakutsiDatuak() {
+        herrienZerrenda.clear();
         String sqlSelect = "SELECT * FROM " + taula;
         try (Statement stmt = konektatu().createStatement(); ResultSet rs = stmt.executeQuery(sqlSelect)) {
-            System.out.println(taula + " taulan dauden datuak:");
             while (rs.next()) {
-                System.out.println(rs.getString("Herria") + " - " + rs.getString("Probintzia"));
-                logenErregistroa(user, "Datu baseko herriak taulako, herri eta probintzien izenak bistaratu.");
+                String herria = rs.getString("Herria") + " (" + rs.getString("Probintzia") + ")";
+                herrienZerrenda.add(herria);
             }
+            return herrienZerrenda;
         } catch (SQLException e) {
             System.out.println("Errorea datuak erakustean: " + e.getMessage());
         }
+        return herrienZerrenda;
     }
 
     public void ezabatu(Herria herria) {
@@ -197,8 +179,6 @@ public class HerrienAtzipenak {
             pstmt.setString(1, herria.getHerriIzena());
             pstmt.setString(2, herria.getProbintzia());
             pstmt.executeUpdate();
-            System.out.println(herria + " ondo ezabatu da.");
-            logenErregistroa(user, "Datu baseko herriak taulako, herri bat ezabatu.");
         } catch (SQLException e) {
             System.out.println("Errorea ezabatzean: " + e.getMessage());
         }
@@ -213,7 +193,6 @@ public class HerrienAtzipenak {
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     probintzia = rs.getString("Probintzia");
-                    logenErregistroa(user, "Datu baseko herriak taulako, herri baten probintzia izenak eskuratu.");
                 }
             }
         } catch (SQLException e) {
@@ -221,24 +200,6 @@ public class HerrienAtzipenak {
         }
         
         return probintzia;
-    }
-
-    public List<String> getProbintziaBatekoHerriak(String probintzia) {
-        List<String> herriak = new ArrayList<>();
-        String sqlSelect = "SELECT Herria FROM " + taula + " WHERE Probintzia = ?";
-
-        try (PreparedStatement pstmt = konektatu().prepareStatement(sqlSelect)) {
-            pstmt.setString(1, probintzia);
-            try (ResultSet rs = pstmt.executeQuery()) {
-                while (rs.next()) {
-                    herriak.add(rs.getString("Herria"));
-                }
-                logenErregistroa(user, "Datu baseko herriak taulako, probintzia bateko, herri gustien izenak eskuratu.");
-            }
-        } catch (SQLException e) {
-            System.out.println("Errorea datuak eskuratzean: " + e.getMessage());
-        }
-        return herriak;
     }
 
     public List<String> getHerriIzenak() {
@@ -249,48 +210,11 @@ public class HerrienAtzipenak {
             while (rs.next()) {
                 herriak.add(rs.getString("Herria"));
             }
-            logenErregistroa(user, "Datu baseko herriak taulako, herri gustien izenak eskuratu.");
         } catch (SQLException e) {
             System.out.println("Errorea datuak eskuratzean: " + e.getMessage());
         }
         
         return herriak;
-    }
-
-    private void logenErregistroa(String user, String action) {
-        String sqlLog = "INSERT INTO Logs (user, action) VALUES (?, ?)";
-        try (PreparedStatement pstmt = konektatu().prepareStatement(sqlLog)) {
-            pstmt.setString(1, user);  
-            pstmt.setString(2, action);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Error al registrar en los logs: " + e.getMessage());
-        }
-    }
-
-    public List<String> logakEskuratu() {
-        List<String> logs = new ArrayList<>();
-        String sqlSelectLogs = "SELECT data, user, action FROM Logs";
-        
-        try (PreparedStatement pstmt = konektatu().prepareStatement(sqlSelectLogs)) {
-            ResultSet rs = pstmt.executeQuery();
-            
-            while (rs.next()) {
-                String data = rs.getString("data");
-                String user = rs.getString("user");
-                String action = rs.getString("action");
-                
-                String logEntry = "Data: " + data + " | Erabiltzailea: " + user + " | Ekintza: " + action;
-                logs.add(logEntry);
-            }
-            
-            logenErregistroa(user, "Datu baseko logs taulako erregistroak eskuratu.");
-            
-        } catch (SQLException e) {
-            System.out.println("Error al obtener los registros de los logs: " + e.getMessage());
-        }
-        
-        return logs;
     }
 
     public void finalize() {
