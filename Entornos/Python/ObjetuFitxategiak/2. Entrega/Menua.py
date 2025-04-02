@@ -8,7 +8,7 @@ import Ebook, LiburuFisikoa, AudioLiburua
 
 # ********************** FITXATEGIEN IZENA DEFINITZEKO **********************
 # Fitxategiaren kokalekua zehaztu
-FITXATEGIA = os.path.join(os.path.dirname(__file__), "liburuak.pkl")
+fitxategia = os.path.join(os.path.dirname(__file__), "liburuak.pkl")
 
 # **********************  KONTSOLARAKO KOLOREAK  **************************
 GORRIA = '\033[91m'
@@ -166,9 +166,9 @@ Returns:
     list: Liburuen zerrenda, edo hutsik baldin badago []
 """
 def fitxategia_kargatu():
-    if os.path.exists(FITXATEGIA):
+    if os.path.exists(fitxategia):
         try:
-            with open(FITXATEGIA, "rb") as f:
+            with open(fitxategia, "rb") as f:
                 return pickle.load(f)
         except (pickle.UnpicklingError, EOFError, Exception) as e:
             print(f"{GORRIA}❌ Errorea fitxategia kargatzean: {e}{RESET}")
@@ -184,7 +184,7 @@ Args:
 """
 def fitxategira_gorde(liburuak):
     try:
-        with open(FITXATEGIA, "wb") as f:
+        with open(fitxategia, "wb") as f:
             pickle.dump(liburuak, f)
     except Exception as e:
         print(f"{GORRIA}❌ Errorea datuak gordetzean: {e}{RESET}")
@@ -197,20 +197,20 @@ Liburu elektroniko berri bat gehitzen du.
 - Datuak kargatzen ditu, objektua sortzen du eta pickle fitxategian gordetzen du.
 """
 def ebookGehitu():
-    liburuak = fitxategia_kargatu()         # Zerrenda zaharra kargatu
+    liburuak = fitxategia_kargatu() # Zerrenda zaharra kargatu
     loop = "bai"
 
     while loop.lower() == "bai":
         kontsolaGarbitu()
-        berria = Ebook.Ebook()                  # Liburu berria sortu
-        liburuak.append(berria)                 # Zerrendara gehitu
-        fitxategira_gorde(liburuak)             # Zerrenda osoa berriz gorde
+        berria = Ebook.Ebook() # Liburu berria sortu
+        liburuak.append(berria) # Zerrendara gehitu
+        fitxategira_gorde(liburuak) # Zerrenda osoa berriz gorde
         
-        loop = input("Beste liburu elektroniko bat sortu nahi duzu? (bai/ez): ")
+        loop = input("Beste liburu elektroniko bat sortu nahi duzu? (bai/ez): ").lower()
         # Erantzuna egokia dela begiratzeko
         while loop != "bai" and loop != "ez":
             # Jasotako erantzuna ez dela ulertu eta berriro galdetu
-            loop = input("Barkatu baina ez da erantzuna ulertu.\nBeste liburu elektroniko bat sortu nahi duzu?")
+            loop = input("Barkatu baina ez da erantzuna ulertu.\nBeste liburu elektroniko bat sortu nahi duzu?").lower()
 
 """
 Liburu fisko berri bat gehitzen du.
@@ -226,11 +226,9 @@ def fisikoaGehitu():
         liburuak.append(berria)
         fitxategira_gorde(liburuak)
 
-        loop = input("Beste liburu fisiko bat sortu nahi duzu? (bai/ez): ")
-        # Erantzuna egokia dela begiratzeko
+        loop = input("Beste liburu fisiko bat sortu nahi duzu? (bai/ez): ").lower()
         while loop != "bai" and loop != "ez":
-            # Jasotako erantzuna ez dela ulertu eta berriro galdetu
-            loop = input("Barkatu baina ez da erantzuna ulertu.\nBeste liburu fisiko bat sortu nahi duzu?")
+            loop = input("Barkatu baina ez da erantzuna ulertu.\nBeste liburu fisiko bat sortu nahi duzu?").lower()
 
 """
 Audioliburu berri bat gehitzen du.
@@ -245,11 +243,9 @@ def audioaGehitu():
         berria = AudioLiburua.AudioLiburua()
         liburuak.append(berria)
         fitxategira_gorde(liburuak)
-        loop = input("Beste audioliburu bat sortu nahi duzu? (bai/ez): ")
-        # Erantzuna egokia dela begiratzeko
+        loop = input("Beste audioliburu bat sortu nahi duzu? (bai/ez): ").lower()
         while loop != "bai" and loop != "ez":
-            # Jasotako erantzuna ez dela ulertu eta berriro galdetu
-            loop = input("Barkatu baina ez da erantzuna ulertu.\nBeste audioliburu bat sortu nahi duzu?")
+            loop = input("Barkatu baina ez da erantzuna ulertu.\nBeste audioliburu bat sortu nahi duzu?").lower()
 
 # **********************  DATUEN BISTARATZEA **********************
 """
@@ -378,7 +374,8 @@ def borratuliburua():
     loop = "bai"
 
     if not liburuak:
-        print(f"{HORIA}📭 ez dago borratzeko libururik.{RESET}")
+        kontsolaGarbitu()
+        print(f"{HORIA}📭 Ez dago borratzeko libururik.{RESET}")
         return
     while loop.lower() == "bai":
         kontsolaGarbitu()
@@ -392,15 +389,14 @@ def borratuliburua():
             if aukera < 1 or aukera > len(liburuak):
                 print(f"{GORRIA}❌ Aukera okerra.{RESET}")
                 return
-            
             # Aukeratutako liburua ezabatzen du
             liburuak.pop(aukera - 1)
             fitxategira_gorde(liburuak)
-            loop = input("Beste liburu elektroniko bat sortu nahi duzu? (bai/ez): ")
+            loop = input("Beste liburu elektroniko bat sortu nahi duzu? (bai/ez): ").lower()
             # Erantzuna egokia dela begiratzeko
             while loop != "bai" and loop != "ez":
                 # Jasotako erantzuna ez dela ulertu eta berriro galdetu
-                loop = input("Barkatu baina ez da erantzuna ulertu.\nBeste liburu elektroniko bat sortu nahi duzu?")
+                loop = input("Barkatu baina ez da erantzuna ulertu.\nBeste liburu elektroniko bat sortu nahi duzu?").lower()
         
         except ValueError:
             print(f"{GORRIA}❌ Zenbaki bat sartu behar duzu.{RESET}")
