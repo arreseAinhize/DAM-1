@@ -30,7 +30,8 @@ public class HerrienAtzipenak {
      * @param taula  Taularen izena.
      * @param user   Erabiltzailea.
      * @param pass   Pasahitza.
-     */
+    */
+    
     public HerrienAtzipenak(String server, String db, String taula, String user, String pass) {
         this.server = server;
         this.db = db;
