@@ -50,7 +50,7 @@ public class LoginController {
 
         if (user != null) {
             Erabiltzailea.setCurrentUser(user);
-            App.setRoot("RatingSystem");
+            App.setRoot("MainMenu");
         } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Errorea (Login hutsa)");

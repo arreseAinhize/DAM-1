@@ -3492,6 +3492,11 @@ is being used to size a border should also be in pixels.
     -fx-background-size: cover;
     -fx-background-position: center;
 }
+#mainMenubackground{
+    -fx-background-image: url("../img/backgrounds/mainMenu.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
 .icon-button {
     -fx-background-color: transparent;
     -fx-cursor: hand;
