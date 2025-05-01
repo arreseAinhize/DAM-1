@@ -17,7 +17,7 @@
             </image>
          </ImageView>
       </graphic></Button>
-    <Button layoutX="57.0" layoutY="160.0" onAction="#handleRating" prefHeight="47.0" prefWidth="314.0" styleClass="icon-button">
+    <Button layoutX="57.0" layoutY="160.0" onAction="#handleRating" prefHeight="47.0" prefWidth="308.0" style="-fx-background-radius: 100px;" styleClass="icon-button">
       <graphic>
          <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="287.0">
             <children>
@@ -34,7 +34,7 @@
          </HBox>
       </graphic>
     </Button>
-    <Button layoutX="55.0" layoutY="252.0" onAction="#handleLog" prefHeight="47.0" prefWidth="314.0" styleClass="icon-button">
+    <Button layoutX="55.0" layoutY="252.0" onAction="#handleLog" prefHeight="47.0" prefWidth="308.0" style="-fx-background-radius: 100px;" styleClass="icon-button">
       <graphic>
          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
             <children>
@@ -48,7 +48,7 @@
          </HBox>
       </graphic>
     </Button>
-   <Button layoutX="51.0" layoutY="332.0" onAction="#handleWish" prefHeight="47.0" prefWidth="314.0" styleClass="icon-button">
+   <Button layoutX="57.0" layoutY="332.0" onAction="#handleWish" prefHeight="47.0" prefWidth="308.0" style="-fx-background-radius: 100px;" styleClass="icon-button">
       <graphic>
          <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
             <children>
@@ -62,7 +62,7 @@
          </HBox>
       </graphic>
    </Button>
-    <Button layoutX="57.0" layoutY="414.0" onAction="#handleStats" prefHeight="47.0" prefWidth="314.0" styleClass="icon-button">
+    <Button layoutX="57.0" layoutY="414.0" onAction="#handleStats" prefHeight="47.0" prefWidth="308.0" style="-fx-background-radius: 100px;" styleClass="icon-button">
       <graphic>
          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
             <children>

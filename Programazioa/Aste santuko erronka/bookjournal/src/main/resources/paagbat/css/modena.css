@@ -3497,6 +3497,11 @@ is being used to size a border should also be in pixels.
     -fx-background-size: cover;
     -fx-background-position: center;
 }
+#trackerbackground{
+    -fx-background-image: url("../img/backgrounds/ReadingTracker.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
 .icon-button {
     -fx-background-color: transparent;
     -fx-cursor: hand;
